@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Arnold Pampelon | AI Automation & Workflow Specialist",
+      "hasCanvas": false,
+      "bodyTextLen": 6871,
+      "bodyTextHash": "97e1954c0da3e96dbcb309d09c2bb79d85b1cbd3d61e60bd55603a3871874971",
+      "bodyTextPrefix": "Skip to content Arnold Pampelon Home About Services Work Experie",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Arnold Pampelon | AI Automation & Workflow Specialist",
+      "hasCanvas": false,
+      "bodyTextLen": 6821,
+      "bodyTextHash": "8766e92fc513ebe6936a40629ce66fb6f2fb3759ddacd8e4ff2e1f52528bc7bf",
+      "bodyTextPrefix": "Skip to content Arnold Pampelon Menu AI AUTOMATION & WORKFLOW SP",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

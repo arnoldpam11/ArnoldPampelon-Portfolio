@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>OG</title>
+  <style>
+    @font-face {
+      font-family: "Barlow Condensed";
+      src: url("./og-fonts/BarlowCondensed-Bold.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Barlow Condensed";
+      src: url("./og-fonts/BarlowCondensed-SemiBold.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Barlow Condensed";
+      src: url("./og-fonts/BarlowCondensed-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "Outfit";
+      src: url("./og-fonts/Outfit.ttf") format("truetype");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: block;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #05080E;
+    }
+    .card {
+      position: relative;
+      width: 1200px;
+      height: 630px;
+      background: #05080E url("./og-bg.jpg") right center / cover no-repeat;
+      font-synthesis: none;
+    }
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg,
+          #05080E 0%,
+          #05080E 34%,
+          rgba(5, 8, 14, 0.88) 48%,
+          rgba(5, 8, 14, 0.35) 64%,
+          rgba(5, 8, 14, 0.08) 78%,
+          transparent 100%),
+        linear-gradient(180deg,
+          rgba(5, 8, 14, 0.35) 0%,
+          transparent 18%,
+          transparent 82%,
+          rgba(5, 8, 14, 0.45) 100%);
+    }
+    .grain {
+      position: absolute;
+      inset: 0;
+      opacity: 0.09;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      mix-blend-mode: overlay;
+    }
+    .accent-bar {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: linear-gradient(180deg, #22D3EE 0%, #2DD4BF 100%);
+    }
+    .lockup {
+      position: absolute;
+      left: 72px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 560px;
+      color: #F8FAFC;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .brand svg {
+      width: 36px;
+      height: 36px;
+      display: block;
+      flex-shrink: 0;
+    }
+    .brand span {
+      font-family: "Barlow Condensed", "Liberation Sans Narrow", sans-serif;
+      font-weight: 600;
+      font-size: 20px;
+      letter-spacing: 0.38em;
+      color: #22D3EE;
+      text-transform: uppercase;
+    }
+    .rule {
+      width: 72px;
+      height: 2px;
+      background: #22D3EE;
+      margin-bottom: 26px;
+    }
+    h1 {
+      font-family: "Barlow Condensed", "Liberation Sans Narrow", sans-serif;
+      font-weight: 700;
+      font-size: 112px;
+      line-height: 0.86;
+      letter-spacing: 0.035em;
+      text-transform: uppercase;
+      color: #F8FAFC;
+      font-kerning: normal;
+    }
+    .tagline {
+      margin-top: 28px;
+      font-family: "Barlow Condensed", "Liberation Sans Narrow", sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      letter-spacing: 0.32em;
+      color: #22D3EE;
+      text-transform: uppercase;
+    }
+    .subtitle {
+      margin-top: 12px;
+      font-family: "Outfit", "Liberation Sans", sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      letter-spacing: 0.04em;
+      color: #CBD5E1;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="vignette"></div>
+    <div class="grain"></div>
+    <div class="accent-bar"></div>
+    <div class="lockup">
+      <div class="brand">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="#22D3EE" fill-rule="evenodd" d="M16 4.4 28.2 28h-4.5l-1.9-3.72H10.2L8.3 28H3.8L16 4.4Zm0 8.1-2.78 5.46h5.56L16 12.5Z"/>
+        </svg>
+        <span>ARTECH</span>
+      </div>
+      <div class="rule"></div>
+      <h1>ARNOLD<br />PAMPELON</h1>
+      <div class="tagline">AUTOMATE • BUILD • GROW</div>
+      <div class="subtitle">AI Automation & Workflow Specialist</div>
+    </div>
+  </div>
+</body>
+</html>
