@@ -133,7 +133,7 @@ export function SwiftFixSection() {
                 </dd>
               </div>
               <div className="grid gap-1 py-4 sm:grid-cols-[5rem_1fr] sm:gap-4">
-                <dt className="text-sm text-ink-mute">Tools used</dt>
+                <dt className="text-sm text-ink-mute">Stack</dt>
                 <dd className="text-sm leading-relaxed text-ink">Supabase · Vercel · GitHub</dd>
               </div>
             </dl>

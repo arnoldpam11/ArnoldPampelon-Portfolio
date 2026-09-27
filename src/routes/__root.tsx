@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: SITE.title },
       { name: "description", content: SITE.description },
-      { name: "theme-color", content: "#F7F6F2" },
+      { name: "theme-color", content: "#100d14" },
       { name: "author", content: SITE.name },
     ],
     links: [
@@ -39,9 +39,11 @@ function RootDocument() {
             __html: `(() => {
               try {
                 const saved = localStorage.getItem("theme");
-                document.documentElement.dataset.theme = saved === "dark" ? "dark" : "light";
+                const dark = saved !== "light";
+                document.documentElement.dataset.theme = dark ? "dark" : "light";
+                document.querySelector('meta[name="theme-color"]')?.setAttribute("content", dark ? "#100d14" : "#F7F6F2");
               } catch {
-                document.documentElement.dataset.theme = "light";
+                document.documentElement.dataset.theme = "dark";
               }
             })();`,
           }}
