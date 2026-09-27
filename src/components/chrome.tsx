@@ -148,8 +148,8 @@ export function SiteFooter() {
               </li>
             ))}
             <li>
-              <a href="/lab" className="text-sm text-ink-soft hover:text-ink">
-                Lab
+              <a href="/#contact" className="text-sm text-ink-soft hover:text-ink">
+                Contact
               </a>
             </li>
           </ul>
