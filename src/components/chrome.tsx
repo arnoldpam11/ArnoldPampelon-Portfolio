@@ -29,12 +29,12 @@ function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-line bg-page px-3 text-ink transition-colors hover:bg-page-alt"
+      className="inline-flex h-10 items-center justify-center gap-2 rounded-md border-2 border-cyan bg-cyan px-4 text-sm font-semibold uppercase tracking-[0.08em] text-page shadow-[0_0_18px_rgb(34_211_238_/_0.25)] transition-all hover:brightness-110"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       title={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
       <span className="text-xs font-medium uppercase tracking-[0.12em]">
-        {dark ? "Light mode" : "Dark mode"}
+        {dark ? "☀ Light" : "☾ Dark"}
       </span>
       {dark ? (
         <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
