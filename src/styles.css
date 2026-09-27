@@ -137,3 +137,23 @@
   background-size: 72px 72px;
   mask-image: radial-gradient(ellipse at 50% 0%, black 20%, transparent 72%);
 }
+
+
+/* Theme overrides */
+:root[data-theme="dark"] {
+  --color-page: #05080e;
+  --color-page-alt: #080d14;
+  --color-surface: #0d131c;
+  --color-elevated: #111923;
+  --color-ink: #f8fafc;
+  --color-ink-soft: #94a3b8;
+  --color-ink-mute: #64748b;
+  --color-cyan: #22d3ee;
+  --color-teal: #2dd4bf;
+  --color-ok: #34d399;
+  --color-danger: #f87171;
+  --color-line: rgb(148 163 184 / 0.14);
+  --color-line-strong: rgb(148 163 184 / 0.25);
+  --color-cyan-dim: rgb(34 211 238 / 0.1);
+  --shadow-panel: 0 12px 36px rgb(0 0 0 / 0.28);
+}
