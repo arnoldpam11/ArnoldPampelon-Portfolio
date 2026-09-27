@@ -30,15 +30,12 @@ const SERVICES = [
   },
 ];
 
-const MANUAL = ["CUSTOMER", "EMAIL", "MANUAL COPY", "SPREADSHEET", "CRM", "MANUAL FOLLOW-UP"];
-const AUTOMATED = ["CUSTOMER", "TRIGGER", "AI", "DATABASE", "NOTIFICATION", "FOLLOW-UP"];
-
 export function ServicesSection() {
   return (
     <section id="services" className="border-t border-line py-20 lg:py-28">
       <Container>
         <div className="max-w-2xl">
-          <TechLabel>Services</TechLabel>
+          <TechLabel>What I Do</TechLabel>
           <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
             From repetitive work to reliable workflows.
           </h2>
@@ -49,8 +46,12 @@ export function ServicesSection() {
               key={service.title}
               className="grid gap-3 py-8 md:grid-cols-[88px_minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-baseline md:gap-10"
             >
-              <p className="font-display text-2xl text-ink-mute">{String(index + 1).padStart(2, "0")}</p>
-              <h3 className="font-display text-2xl font-semibold tracking-tight">{service.title}</h3>
+              <p className="font-display text-2xl text-ink-mute">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="font-display text-2xl font-semibold tracking-tight">
+                {service.title}
+              </h3>
               <p className="text-base leading-relaxed text-ink-soft">{service.copy}</p>
             </article>
           ))}
@@ -60,57 +61,13 @@ export function ServicesSection() {
   );
 }
 
-export function ManualVsAutomated() {
-  return (
-    <section className="border-t border-line bg-page-alt py-20 lg:py-28">
-      <Container>
-        <TechLabel>The shift</TechLabel>
-        <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          From Manual to Automated
-        </h2>
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-xl border border-line bg-surface p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">Manual</p>
-            <ul className="mt-6 space-y-4">
-              {MANUAL.map((step, index) => (
-                <li key={step}>
-                  <p className="font-mono text-sm uppercase tracking-widest text-ink">{step}</p>
-                  {index < MANUAL.length - 1 ? (
-                    <p className="mt-3 font-mono text-xs text-ink-mute">↓</p>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rounded-xl border border-cyan/25 bg-surface p-6">
-            <p className="font-mono text-xs uppercase tracking-widest text-cyan">Automated</p>
-            <ul className="mt-6 space-y-4">
-              {AUTOMATED.map((step, index) => (
-                <li key={step}>
-                  <p className="font-mono text-sm uppercase tracking-widest text-ink">{step}</p>
-                  {index < AUTOMATED.length - 1 ? (
-                    <p className="mt-3 font-mono text-xs text-cyan">↓</p>
-                  ) : null}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <p className="mt-10 max-w-xl text-lg text-ink-soft">
-          Less manual work. More time for the business.
-        </p>
-      </Container>
-    </section>
-  );
-}
-
 export function SwiftFixSection() {
   return (
-    <section id="work" className="py-20 lg:py-28">
+    <section id="work" className="border-t border-line py-20 lg:py-28">
       <Container>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <TechLabel>Real client project</TechLabel>
+            <TechLabel>Featured client project</TechLabel>
             <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
               SwiftFix Building Maintenance Services
             </h2>
@@ -123,42 +80,57 @@ export function SwiftFixSection() {
             href={SITE.swiftfixUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md bg-ink px-6 text-sm font-medium text-page hover:bg-ink/90"
+            className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md bg-ink px-6 text-sm font-medium text-page transition-colors hover:bg-ink/90"
           >
             View Live Website →
           </a>
         </div>
 
-        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
           <BrowserFrame
             src="/images/swiftfix-home.jpg"
             alt="Live SwiftFix Building Maintenance Services website"
             url={SITE.swiftfixUrl.replace("https://", "")}
           />
-          <div className="space-y-8">
-            <div className="overflow-hidden rounded-xl border border-line bg-ink p-8">
-              <img
-                src="/images/swiftfix-logo.jpg"
-                alt="SwiftFix Building Maintenance Services logo"
-                className="mx-auto h-auto w-full max-w-xs object-contain"
-                width={480}
-                height={400}
-              />
-            </div>
-            <div>
-              <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">Built with</p>
-              <ul className="mt-4 flex flex-wrap gap-2">
-                {["Supabase", "Vercel", "GitHub", "Responsive website", "Service request system"].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-line bg-elevated px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-ink-soft"
-                    >
-                      {item}
-                    </li>
-                  ),
-                )}
-              </ul>
+
+          <div className="space-y-6">
+            <div className="rounded-xl border border-line bg-surface p-6">
+              <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">
+                Project Snapshot
+              </p>
+              <dl className="mt-5 space-y-5">
+                <div>
+                  <dt className="font-mono text-[11px] uppercase tracking-widest text-ink-mute">
+                    Client
+                  </dt>
+                  <dd className="mt-1.5 text-base font-medium text-ink">
+                    SwiftFix Building Maintenance Services
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[11px] uppercase tracking-widest text-ink-mute">
+                    Scope
+                  </dt>
+                  <dd className="mt-1.5 text-base leading-relaxed text-ink-soft">
+                    Business website · service requests · backend storage
+                  </dd>
+                </div>
+                <div>
+                  <dt className="font-mono text-[11px] uppercase tracking-widest text-ink-mute">
+                    Stack
+                  </dt>
+                  <dd className="mt-2 flex flex-wrap gap-2">
+                    {["Supabase", "Vercel", "GitHub", "Responsive UI"].map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-md border border-line bg-elevated px-2.5 py-1 font-mono text-xs uppercase tracking-widest text-ink-soft"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </dd>
+                </div>
+              </dl>
             </div>
           </div>
         </div>
@@ -183,7 +155,16 @@ export function SwiftFixSection() {
         <div className="mt-14">
           <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">System flow</p>
           <div className="mt-5">
-            <WorkflowRow steps={["CUSTOMER", "SWIFTFIX WEBSITE", "SERVICE REQUEST", "BACKEND", "SUPABASE", "BUSINESS DATA"]} />
+            <WorkflowRow
+              steps={[
+                "CUSTOMER",
+                "SWIFTFIX WEBSITE",
+                "SERVICE REQUEST",
+                "BACKEND",
+                "SUPABASE",
+                "BUSINESS DATA",
+              ]}
+            />
           </div>
           <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-mute">
             Implemented: public website, service pages, and a service-request form with
@@ -246,9 +227,14 @@ export function ExperienceSection() {
         </p>
         <div className="mt-14 space-y-0">
           {roles.map((role) => (
-            <article key={role.title} className="grid gap-4 border-t border-line py-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+            <article
+              key={role.title}
+              className="grid gap-4 border-t border-line py-10 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]"
+            >
               <div>
-                <h3 className="font-display text-2xl font-semibold tracking-tight">{role.title}</h3>
+                <h3 className="font-display text-2xl font-semibold tracking-tight">
+                  {role.title}
+                </h3>
                 <p className="mt-2 text-sm text-ink-soft">{role.org}</p>
               </div>
               <ul className="flex flex-wrap gap-2">
@@ -268,61 +254,3 @@ export function ExperienceSection() {
     </section>
   );
 }
-
-export function PracticeSection() {
-  const items = [
-    {
-      label: "PRACTICE",
-      title: "AI Lead Qualification",
-      copy: "A practice workflow that reads an inquiry and drafts a short qualification note.",
-      flow: ["FORM", "AI", "NOTES", "DASHBOARD"],
-    },
-    {
-      label: "PRACTICE",
-      title: "Lead Capture Automation",
-      copy: "Form intake, validation, and database storage — the same pattern used on this site.",
-      flow: ["FORM", "VALIDATE", "DATABASE", "NOTIFY"],
-    },
-    {
-      label: "CONCEPT",
-      title: "CRM Workflow",
-      copy: "A conceptual routing model for moving qualified leads into a CRM.",
-      flow: ["LEAD", "RULES", "CRM", "OWNER"],
-    },
-    {
-      label: "CONCEPT / PROTOTYPE",
-      title: "AI Chatbot",
-      copy: "A prototype pattern for answering common questions from a knowledge source.",
-      flow: ["QUESTION", "AI", "KNOWLEDGE", "RESPONSE"],
-    },
-  ];
-
-  return (
-    <section className="border-t border-line py-20 lg:py-28">
-      <Container>
-        <TechLabel>Other work</TechLabel>
-        <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-          Practice and concept projects
-        </h2>
-        <p className="mt-5 max-w-2xl text-ink-soft">
-          These are not client projects. They are labeled so it stays clear what is live
-          client work and what is practice.
-        </p>
-        <div className="mt-12 space-y-6">
-          {items.map((item) => (
-            <article key={item.title} className="rounded-xl border border-line bg-surface p-6">
-              <p className="font-mono text-xs uppercase tracking-widest text-cyan">{item.label}</p>
-              <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight">{item.title}</h3>
-              <p className="mt-3 max-w-2xl text-ink-soft">{item.copy}</p>
-              <div className="mt-5">
-                <WorkflowRow steps={item.flow} />
-              </div>
-            </article>
-          ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-
