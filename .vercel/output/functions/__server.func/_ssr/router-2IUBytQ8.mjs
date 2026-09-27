@@ -1,11 +1,11 @@
 import { o as __toESM } from "../_runtime.mjs";
-import { a as SITE } from "./site-DwsUX1kK.mjs";
+import { a as SITE } from "./site-DvMkYlXS.mjs";
 import { t as __exportAll } from "./rolldown-runtime-D7D4PA-g.mjs";
-import { C as require_jsx_runtime, S as useRouter, X as require_react, _ as createFileRoute, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute } from "../_libs/@tanstack/react-router+[...].mjs";
 import { F as object, M as literal, P as number, R as string, z as union } from "../_libs/@better-auth/core+[...].mjs";
-import { n as auth } from "./server-lSgG7kIP.mjs";
+import { C as require_jsx_runtime, S as useRouter, X as require_react, _ as createFileRoute, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute } from "../_libs/@tanstack/react-router+[...].mjs";
+import { n as auth } from "./server-CASH6cq5.mjs";
 import { t as TriangleAlert } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DWNqeS7_.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-2IUBytQ8.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
@@ -299,8 +299,8 @@ function PreviewHostBridge() {
 	}, [router]);
 	return null;
 }
-var styles_default = "/assets/styles-QONepzNj.css";
-var Route$5 = createRootRoute({
+var styles_default = "/assets/styles-rbSzRLot.css";
+var Route$6 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -315,7 +315,7 @@ var Route$5 = createRootRoute({
 			},
 			{
 				name: "theme-color",
-				content: "#05080E"
+				content: "#F7F6F2"
 			},
 			{
 				name: "author",
@@ -377,32 +377,39 @@ function RootDocument() {
 		})]
 	});
 }
-var $$splitComponentImporter$3 = () => import("./routes-SS_bAp7I.mjs");
-var Route$4 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./admin-C8MbbPLj.mjs");
-var Route$3 = createFileRoute("/admin")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./login-DPFBBH9C.mjs");
+var $$splitComponentImporter$4 = () => import("./routes-BDr3VF21.mjs");
+var Route$5 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
+var $$splitComponentImporter$3 = () => import("./admin-BTXmPRqG.mjs");
+var Route$4 = createFileRoute("/admin")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
+var $$splitComponentImporter$2 = () => import("./lab-BeXmpjYh.mjs");
+var Route$3 = createFileRoute("/lab")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
+var $$splitComponentImporter$1 = () => import("./login-B2lKz2mG.mjs");
 var Route$2 = createFileRoute("/login")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./admin._leadId-ByrRmMIw.mjs");
+var $$splitComponentImporter = () => import("./admin._leadId-BzWbanQU.mjs");
 var Route$1 = createFileRoute("/admin/$leadId")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var Route = createFileRoute("/api/auth/$")({ server: { handlers: {
 	GET: ({ request }) => auth.handler(request),
 	POST: ({ request }) => auth.handler(request)
 } } });
-var IndexRoute = Route$4.update({
+var IndexRoute = Route$5.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$5
+	getParentRoute: () => Route$6
 });
-var AdminRoute = Route$3.update({
+var AdminRoute = Route$4.update({
 	id: "/admin",
 	path: "/admin",
-	getParentRoute: () => Route$5
+	getParentRoute: () => Route$6
+});
+var LabRoute = Route$3.update({
+	id: "/lab",
+	path: "/lab",
+	getParentRoute: () => Route$6
 });
 var LoginRoute = Route$2.update({
 	id: "/login",
 	path: "/login",
-	getParentRoute: () => Route$5
+	getParentRoute: () => Route$6
 });
 var AdminLeadIdRoute = Route$1.update({
 	id: "/$leadId",
@@ -412,16 +419,17 @@ var AdminLeadIdRoute = Route$1.update({
 var ApiAuthSplatRoute = Route.update({
 	id: "/api/auth/$",
 	path: "/api/auth/$",
-	getParentRoute: () => Route$5
+	getParentRoute: () => Route$6
 });
 var AdminRouteChildren = { AdminLeadIdRoute };
 var rootRouteChildren = {
 	IndexRoute,
 	AdminRoute: AdminRoute._addFileChildren(AdminRouteChildren),
+	LabRoute,
 	LoginRoute,
 	ApiAuthSplatRoute
 };
-var routeTree = Route$5._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$6._addFileChildren(rootRouteChildren)._addFileTypes();
 var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 function getRouter() {
 	return createRouter({

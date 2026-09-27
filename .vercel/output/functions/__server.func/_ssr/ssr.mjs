@@ -106,7 +106,7 @@ var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 * the dev styles URL for route-scoped CSS collection.
 */
 async function getStartManifest(matchedRoutes) {
-	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-B0JlLaFf.mjs");
+	const { tsrStartManifest } = await import("../_tanstack-start-manifest_v-AMTO2_91.mjs");
 	const startManifest = tsrStartManifest();
 	let routes = startManifest.routes;
 	routes[rootRouteId];
@@ -128,31 +128,31 @@ async function getStartManifest(matchedRoutes) {
 var manifest = {
 	"04f54142ca6aa009b484a47536ec0019d0242ef824c45a0cdadf625f682a117b": {
 		functionName: "getAdminContext_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	},
 	"397bf9b2c77d2e9070521dce7c0fe1c651aaf83d6166e317e45d4683940adcee": {
 		functionName: "getLead_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	},
 	"4c9b262da236364ce2799c572c8c1554a6851721e1f164348da7d4e4e6fbe1d7": {
 		functionName: "claimAdmin_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	},
 	"7f6eda556f79c4f47d233f2dcd55c73adecd230ca3a70d59bdbc552ff1135a59": {
 		functionName: "submitInquiry_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	},
 	"8609a5036cdcf900f81e6979a1b452a3642fe1c42ed5b9cf3d3800c4b1e63ac6": {
 		functionName: "deleteLead_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	},
 	"d1b205ff79b83ebb83618a84674d7af22a265eef2a1945f0896bf3aa39e019fe": {
 		functionName: "listLeads_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	},
 	"fd3065a022f97a2d3cf1b61f28151e8aba379eed5bae5d4649e2921e2ecd094e": {
 		functionName: "updateLeadStatus_createServerFn_handler",
-		importer: () => import("./lead-actions-C2cLftk5.mjs")
+		importer: () => import("./lead-actions-DVU1iEwa.mjs")
 	}
 };
 async function getServerFnById(id, access) {
@@ -1546,7 +1546,7 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
 	const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-		import("./router-DWNqeS7_.mjs").then((n) => n.t),
+		import("./router-2IUBytQ8.mjs").then((n) => n.t),
 		import("./start-5Z2QO8AU.mjs"),
 		import("./empty-plugin-adapters-D9UWiqvJ.mjs")
 	]);

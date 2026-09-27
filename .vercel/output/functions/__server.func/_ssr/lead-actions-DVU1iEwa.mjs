@@ -1,7 +1,7 @@
 import { i as TSS_SERVER_FUNCTION, r as createServerFn } from "./ssr.mjs";
-import { t as authMiddleware } from "./middleware-DCtf_Cdb.mjs";
-import { n as leadInquirySchema, t as isLeadStatus } from "./leads-CoEAuKqx.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/lead-actions-C2cLftk5.js
+import { t as authMiddleware } from "./middleware-VxqyScf7.mjs";
+import { n as leadInquirySchema, t as isLeadStatus } from "./leads-C5WLjq4l.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/lead-actions-DVU1iEwa.js
 var createServerRpc = (serverFnMeta, splitImportFn) => {
 	const url = "/_serverFn/" + serverFnMeta.id;
 	return Object.assign(splitImportFn, {
@@ -21,7 +21,7 @@ function asLead(row) {
 	};
 }
 async function sqlClient() {
-	const { getSql } = await import("./db-ilSU9g5i.mjs").then((n) => n.t).then((n) => n.t);
+	const { getSql } = await import("./db-DMV7k6Fj.mjs").then((n) => n.t).then((n) => n.t);
 	return getSql();
 }
 async function requireAdmin(userId) {

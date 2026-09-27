@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/site-DwsUX1kK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/site-DvMkYlXS.js
 var SITE = {
 	name: "Arnold Pampelon",
 	title: "Arnold Pampelon | AI Automation & Workflow Specialist",
@@ -15,10 +15,6 @@ var NAV_LINKS = [
 		label: "Home"
 	},
 	{
-		href: "/#about",
-		label: "About"
-	},
-	{
 		href: "/#services",
 		label: "Services"
 	},
@@ -29,10 +25,6 @@ var NAV_LINKS = [
 	{
 		href: "/#experience",
 		label: "Experience"
-	},
-	{
-		href: "/#process",
-		label: "Process"
 	}
 ];
 var SERVICES = [

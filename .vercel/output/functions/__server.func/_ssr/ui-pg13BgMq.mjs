@@ -1,12 +1,10 @@
 import { o as __toESM } from "../_runtime.mjs";
 import { C as require_jsx_runtime, X as require_react, b as Navigate } from "../_libs/@tanstack/react-router+[...].mjs";
-import { a as getServerFnById, i as TSS_SERVER_FUNCTION, r as createServerFn } from "./ssr.mjs";
 import { i as signOut, t as authClient } from "./client-IWHfIGH2.mjs";
-import { a as hasGateSessionMarker } from "./server-lSgG7kIP.mjs";
-import { t as authMiddleware } from "./middleware-DCtf_Cdb.mjs";
+import { a as hasGateSessionMarker } from "./server-CASH6cq5.mjs";
 import { t as clsx } from "../_libs/clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/ui-Dj0GAmAv.js
+//#region node_modules/.nitro/vite/services/ssr/assets/ui-pg13BgMq.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 /**
@@ -122,25 +120,6 @@ function UserButton() {
 		]
 	});
 }
-var createSsrRpc = (functionId) => {
-	const url = "/_serverFn/" + functionId;
-	const serverFnMeta = { id: functionId };
-	const fn = async (...args) => {
-		return (await getServerFnById(functionId, { origin: "server" }))(...args);
-	};
-	return Object.assign(fn, {
-		url,
-		serverFnMeta,
-		[TSS_SERVER_FUNCTION]: true
-	});
-};
-var submitInquiry = createServerFn({ method: "POST" }).validator((data) => data).handler(createSsrRpc("7f6eda556f79c4f47d233f2dcd55c73adecd230ca3a70d59bdbc552ff1135a59"));
-var getAdminContext = createServerFn({ method: "GET" }).middleware([authMiddleware]).handler(createSsrRpc("04f54142ca6aa009b484a47536ec0019d0242ef824c45a0cdadf625f682a117b"));
-var claimAdmin = createServerFn({ method: "POST" }).middleware([authMiddleware]).handler(createSsrRpc("4c9b262da236364ce2799c572c8c1554a6851721e1f164348da7d4e4e6fbe1d7"));
-var listLeads = createServerFn({ method: "GET" }).middleware([authMiddleware]).validator((input) => input ?? {}).handler(createSsrRpc("d1b205ff79b83ebb83618a84674d7af22a265eef2a1945f0896bf3aa39e019fe"));
-var getLead = createServerFn({ method: "GET" }).middleware([authMiddleware]).validator((id) => id).handler(createSsrRpc("397bf9b2c77d2e9070521dce7c0fe1c651aaf83d6166e317e45d4683940adcee"));
-var updateLeadStatus = createServerFn({ method: "POST" }).middleware([authMiddleware]).validator((input) => input).handler(createSsrRpc("fd3065a022f97a2d3cf1b61f28151e8aba379eed5bae5d4649e2921e2ecd094e"));
-var deleteLead = createServerFn({ method: "POST" }).middleware([authMiddleware]).validator((id) => id).handler(createSsrRpc("8609a5036cdcf900f81e6979a1b452a3642fe1c42ed5b9cf3d3800c4b1e63ac6"));
 function cn(...inputs) {
 	return twMerge(clsx(inputs));
 }
@@ -199,4 +178,4 @@ function StatusBadge({ status }) {
 	});
 }
 //#endregion
-export { submitInquiry as _, Select as a, TechLabel as c, claimAdmin as d, cn as f, listLeads as g, getLead as h, RedirectToSignIn as i, Textarea as l, getAdminContext as m, Field as n, SignedIn as o, deleteLead as p, Input as r, StatusBadge as s, Button as t, UserButton as u, updateLeadStatus as v, useCurrentUserState as y };
+export { Select as a, TechLabel as c, cn as d, useCurrentUserState as f, RedirectToSignIn as i, Textarea as l, Field as n, SignedIn as o, Input as r, StatusBadge as s, Button as t, UserButton as u };
