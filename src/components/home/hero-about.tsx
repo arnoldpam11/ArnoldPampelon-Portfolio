@@ -34,27 +34,30 @@ export function HeroSection() {
       <div className="pointer-events-none absolute inset-0 grid-fade" />
       <Container className="relative grid items-center gap-12 py-16 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:gap-16 lg:py-24">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-cyan">
-            AI Automation & Workflow Specialist
-          </p>
-          <h1 className="mt-4 font-display text-5xl font-bold leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
+          <TechLabel>AI Automation & Workflow Specialist</TechLabel>
+          <h1 className="mt-5 font-display text-5xl font-bold leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-7xl">
             {SITE.name}
           </h1>
+          <p className="mt-8 max-w-xl font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+            Automate the Work.
+            <br />
+            Focus on the Business.
+          </p>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
             {SITE.positioning}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
               href="/#work"
-              className="inline-flex min-h-12 items-center justify-center rounded-md bg-ink px-6 text-sm font-medium text-page transition-colors hover:bg-ink/90"
+              className="inline-flex min-h-12 items-center justify-center rounded-md border border-line-strong px-6 text-sm font-medium text-ink transition-colors hover:bg-elevated"
             >
               View My Work →
             </a>
             <a
               href="/#contact"
-              className="inline-flex min-h-12 items-center justify-center rounded-md border border-line-strong px-6 text-sm font-medium text-ink transition-colors hover:bg-elevated"
+              className="inline-flex min-h-12 items-center justify-center rounded-md bg-ink px-6 text-sm font-medium text-page transition-colors hover:bg-ink/90"
             >
-              Let&apos;s Work Together →
+              Let's Work Together →
             </a>
           </div>
           <p className="mt-6 flex items-center gap-2 text-sm text-ink-soft">
@@ -65,15 +68,13 @@ export function HeroSection() {
             <img
               src="/images/artech-logo.webp"
               alt="ARTECH"
-              className="size-10 rounded-md bg-ink object-contain p-1"
-              width={40}
-              height={40}
+              className="size-11 rounded-md bg-ink object-contain p-1"
+              width={44}
+              height={44}
             />
             <div>
               <p className="text-sm font-medium text-ink-soft">{SITE.brand}</p>
-              <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">
-                {SITE.tagline}
-              </p>
+              <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">{SITE.tagline}</p>
             </div>
           </div>
         </div>
@@ -87,11 +88,11 @@ export function CapabilityStrip() {
   const items = ["AI", "AUTOMATION", "APIs", "WEBHOOKS", "DATABASES", "CRM"];
   return (
     <section className="border-y border-line bg-page-alt">
-      <Container className="py-7">
+      <Container className="py-8">
         <p className="text-center font-mono text-xs uppercase tracking-widest text-ink-mute">
           Practical automation · Real systems · Business workflows
         </p>
-        <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
           {items.map((item) => (
             <li key={item} className="font-mono text-xs uppercase tracking-widest text-ink">
               {item}
@@ -115,7 +116,6 @@ export function AboutSection() {
               className="aspect-[4/5] w-full object-cover object-[50%_12%]"
               width={800}
               height={1000}
-              loading="lazy"
             />
           </div>
           <div className="mt-4 flex items-start justify-between gap-4">
@@ -127,7 +127,7 @@ export function AboutSection() {
             </div>
             <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-ok">
               <span className="status-pulse size-1.5 rounded-full bg-ok" />
-              Available
+              Available for projects
             </p>
           </div>
         </div>
@@ -137,7 +137,7 @@ export function AboutSection() {
             Automation should solve a problem.
           </h2>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            I&apos;m Arnold Pampelon, an AI Automation & Workflow Specialist focused on
+            I'm Arnold Pampelon, an AI Automation & Workflow Specialist focused on
             building practical systems that reduce repetitive work, organize information,
             and connect business tools.
           </p>
@@ -155,17 +155,14 @@ export function AboutSection() {
 
 export function PrinciplesSection() {
   return (
-    <section className="border-t border-line py-16 lg:py-20">
+    <section className="border-t border-line py-20 lg:py-28">
       <Container>
-        <div className="grid gap-10 md:grid-cols-3 md:gap-12">
+        <TechLabel>How I work</TechLabel>
+        <div className="mt-10 grid gap-10 md:grid-cols-3 md:gap-12">
           {PRINCIPLES.map((item) => (
             <article key={item.num} className="border-t border-line pt-6">
-              <p className="font-display text-3xl font-semibold tracking-tight text-ink-mute">
-                {item.num}
-              </p>
-              <h3 className="mt-3 font-mono text-xs uppercase tracking-widest text-cyan">
-                {item.title}
-              </h3>
+              <p className="font-display text-4xl font-semibold tracking-tight text-ink-mute">{item.num}</p>
+              <h3 className="mt-4 font-mono text-xs uppercase tracking-widest text-cyan">{item.title}</h3>
               <p className="mt-3 text-base leading-relaxed text-ink-soft">{item.copy}</p>
             </article>
           ))}
@@ -174,3 +171,5 @@ export function PrinciplesSection() {
     </section>
   );
 }
+
+
