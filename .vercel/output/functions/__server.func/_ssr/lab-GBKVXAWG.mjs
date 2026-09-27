@@ -1,7 +1,7 @@
 import { C as require_jsx_runtime, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { c as TechLabel } from "./ui-pg13BgMq.mjs";
-import { a as WorkflowRow, i as SiteNav, n as Container, r as SiteFooter } from "./workflow-BcYFpA4e.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/lab-BeXmpjYh.js
+import { a as WorkflowRow, i as SiteNav, n as Container, r as SiteFooter } from "./workflow-DoapVhVM.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/lab-GBKVXAWG.js
 var import_jsx_runtime = require_jsx_runtime();
 var ITEMS = [
 	{

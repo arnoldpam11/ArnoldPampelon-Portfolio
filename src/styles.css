@@ -141,19 +141,19 @@
 
 /* Theme overrides */
 :root[data-theme="dark"] {
-  --color-page: #05080e;
-  --color-page-alt: #080d14;
-  --color-surface: #0d131c;
-  --color-elevated: #111923;
-  --color-ink: #f8fafc;
-  --color-ink-soft: #94a3b8;
-  --color-ink-mute: #64748b;
-  --color-cyan: #22d3ee;
-  --color-teal: #2dd4bf;
-  --color-ok: #34d399;
-  --color-danger: #f87171;
-  --color-line: rgb(148 163 184 / 0.14);
-  --color-line-strong: rgb(148 163 184 / 0.25);
-  --color-cyan-dim: rgb(34 211 238 / 0.1);
-  --shadow-panel: 0 12px 36px rgb(0 0 0 / 0.28);
+  --color-page: #101713;
+  --color-page-alt: #151e19;
+  --color-surface: #1a241e;
+  --color-elevated: #202c25;
+  --color-ink: #edf2ed;
+  --color-ink-soft: #b2beb4;
+  --color-ink-mute: #89988c;
+  --color-cyan: #8eafa0;
+  --color-teal: #a0bba9;
+  --color-ok: #91b6a0;
+  --color-danger: #e19b90;
+  --color-line: rgb(224 235 226 / 0.13);
+  --color-line-strong: rgb(224 235 226 / 0.23);
+  --color-cyan-dim: rgb(142 175 160 / 0.12);
+  --shadow-panel: 0 12px 36px rgb(0 0 0 / 0.22);
 }

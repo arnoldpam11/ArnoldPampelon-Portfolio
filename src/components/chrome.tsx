@@ -5,15 +5,15 @@ import { NAV_LINKS, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function ThemeToggle() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("theme");
-    const initialDark = saved ? saved === "dark" : true;
+    const initialDark = saved === "dark";
     setDark(initialDark);
     document.documentElement.dataset.theme = initialDark ? "dark" : "light";
     const meta = document.querySelector('meta[name="theme-color"]');
-    meta?.setAttribute("content", initialDark ? "#05080E" : "#F7F6F2");
+    meta?.setAttribute("content", initialDark ? "#101713" : "#F7F6F2");
   }, []);
 
   const toggle = () => {
@@ -22,27 +22,26 @@ function ThemeToggle() {
     document.documentElement.dataset.theme = nextDark ? "dark" : "light";
     window.localStorage.setItem("theme", nextDark ? "dark" : "light");
     const meta = document.querySelector('meta[name="theme-color"]');
-    meta?.setAttribute("content", nextDark ? "#05080E" : "#F7F6F2");
+    meta?.setAttribute("content", nextDark ? "#101713" : "#F7F6F2");
   };
 
   return (
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex h-10 items-center justify-center gap-2 rounded-md border-2 border-cyan bg-cyan px-4 text-sm font-semibold uppercase tracking-[0.08em] text-page shadow-[0_0_18px_rgb(34_211_238_/_0.25)] transition-all hover:brightness-110"
+      className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-line-strong bg-surface px-3.5 text-sm font-medium text-ink transition-colors hover:bg-page-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/40"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       title={dark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-pressed={dark}
     >
-      <span className="text-xs font-medium uppercase tracking-[0.12em]">
-        {dark ? "☀ Light" : "☾ Dark"}
-      </span>
+      <span className="text-xs font-medium">{dark ? "Light mode" : "Dark mode"}</span>
       {dark ? (
-        <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
           <circle cx="12" cy="12" r="4" />
           <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
         </svg>
       ) : (
-        <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true">
           <path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z" />
         </svg>
       )}

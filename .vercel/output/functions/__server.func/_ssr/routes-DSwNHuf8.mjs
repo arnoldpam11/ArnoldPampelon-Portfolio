@@ -3,9 +3,9 @@ import { a as SITE, i as SERVICES$1, t as BUDGETS } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Select, c as TechLabel, l as Textarea, n as Field, r as Input, t as Button } from "./ui-pg13BgMq.mjs";
 import { o as submitInquiry } from "./lead-actions-DoP-RJIz.mjs";
-import { i as SiteNav, n as Container, r as SiteFooter, t as BrowserFrame } from "./workflow-BcYFpA4e.mjs";
+import { i as SiteNav, n as Container, r as SiteFooter, t as BrowserFrame } from "./workflow-DoapVhVM.mjs";
 import { n as leadInquirySchema } from "./leads-C5WLjq4l.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BDr3VF21.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DSwNHuf8.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function HeroSection() {
@@ -279,22 +279,19 @@ function ExperienceSection() {
 				children: "Professional experience"
 			})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 				className: "divide-y divide-line border-y border-line",
-				children: [
-					{
-						title: "Customer Service Representative",
-						org: "TaskUs",
-						period: "2025–2026"
-					},
-					{
-						title: "BPO / Customer Support",
-						org: "IBEX",
+				children: [{
+					title: "BPO / Customer Service Representative",
+					companies: [{
+						name: "IBEX",
 						period: "2024–2025"
-					},
-					{
-						title: "Data Entry",
-						org: "Operations support"
-					}
-				].map((role) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+					}, {
+						name: "TaskUs",
+						period: "2025–2026"
+					}]
+				}, {
+					title: "Data Entry",
+					org: "Operations support"
+				}].map((role) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
 					className: "py-4",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5",
@@ -303,16 +300,27 @@ function ExperienceSection() {
 							children: role.title
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-baseline justify-between gap-5 sm:shrink-0 sm:justify-end sm:gap-8",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							children: [role.companies ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-sm text-ink-soft",
+								children: role.companies.map((company, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
+									index > 0 ? " · " : "",
+									company.name,
+									" ",
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "font-mono text-xs text-ink-mute",
+										children: company.period
+									})
+								] }, company.name))
+							}) : role.org ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "text-sm text-ink-soft",
 								children: role.org
-							}), role.period ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("time", {
+							}) : null, role.period ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("time", {
 								className: "font-mono text-xs tabular-nums text-ink-mute",
 								children: role.period
 							}) : null]
 						})]
 					})
-				}, role.org))
+				}, role.title))
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-8 border-t border-line pt-5",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {

@@ -2,9 +2,57 @@ import { o as __toESM } from "../_runtime.mjs";
 import { a as SITE, r as NAV_LINKS } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { d as cn, o as SignedIn } from "./ui-pg13BgMq.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/workflow-BcYFpA4e.js
+//#region node_modules/.nitro/vite/services/ssr/assets/workflow-DoapVhVM.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
+function ThemeToggle() {
+	const [dark, setDark] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		const initialDark = window.localStorage.getItem("theme") === "dark";
+		setDark(initialDark);
+		document.documentElement.dataset.theme = initialDark ? "dark" : "light";
+		document.querySelector("meta[name=\"theme-color\"]")?.setAttribute("content", initialDark ? "#101713" : "#F7F6F2");
+	}, []);
+	const toggle = () => {
+		const nextDark = !dark;
+		setDark(nextDark);
+		document.documentElement.dataset.theme = nextDark ? "dark" : "light";
+		window.localStorage.setItem("theme", nextDark ? "dark" : "light");
+		document.querySelector("meta[name=\"theme-color\"]")?.setAttribute("content", nextDark ? "#101713" : "#F7F6F2");
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+		type: "button",
+		onClick: toggle,
+		className: "inline-flex h-10 items-center justify-center gap-2 rounded-full border border-line-strong bg-surface px-3.5 text-sm font-medium text-ink transition-colors hover:bg-page-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/40",
+		"aria-label": dark ? "Switch to light mode" : "Switch to dark mode",
+		title: dark ? "Switch to light mode" : "Switch to dark mode",
+		"aria-pressed": dark,
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+			className: "text-xs font-medium",
+			children: dark ? "Light mode" : "Dark mode"
+		}), dark ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+			viewBox: "0 0 24 24",
+			className: "size-4 shrink-0",
+			fill: "none",
+			stroke: "currentColor",
+			strokeWidth: "1.7",
+			"aria-hidden": "true",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("circle", {
+				cx: "12",
+				cy: "12",
+				r: "4"
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" })]
+		}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+			viewBox: "0 0 24 24",
+			className: "size-4 shrink-0",
+			fill: "none",
+			stroke: "currentColor",
+			strokeWidth: "1.7",
+			"aria-hidden": "true",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z" })
+		})]
+	});
+}
 function Container({ children, className }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: cn("mx-auto w-full max-w-6xl px-5 sm:px-8", className),
@@ -47,33 +95,40 @@ function SiteNav() {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "hidden items-center gap-3 lg:flex",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SignedIn, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
-						to: "/admin",
-						className: "text-sm text-ink-soft hover:text-ink",
-						children: "Dashboard"
-					}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "/#contact",
-						className: "inline-flex min-h-10 items-center justify-center rounded-md bg-ink px-4 text-sm font-medium text-page transition-colors hover:bg-ink/90",
-						children: "Let's Talk"
-					})]
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SignedIn, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/admin",
+							className: "text-sm text-ink-soft hover:text-ink",
+							children: "Dashboard"
+						}) }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: "/#contact",
+							className: "inline-flex min-h-10 items-center justify-center rounded-md bg-ink px-4 text-sm font-medium text-page transition-colors hover:bg-ink/90",
+							children: "Let's Talk"
+						})
+					]
 				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-					type: "button",
-					className: "inline-flex size-11 items-center justify-center rounded-md border border-line text-ink lg:hidden",
-					"aria-label": open ? "Close menu" : "Open menu",
-					"aria-expanded": open,
-					onClick: () => setOpen((value) => !value),
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "sr-only",
-						children: "Menu"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "flex w-4 flex-col gap-1.5",
-						"aria-hidden": "true",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: cn("h-px w-full bg-ink transition-transform", open && "translate-y-[5px] rotate-45") }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: cn("h-px w-full bg-ink transition-opacity", open && "opacity-0") }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: cn("h-px w-full bg-ink transition-transform", open && "-translate-y-[5px] -rotate-45") })
-						]
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2 lg:hidden",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						className: "inline-flex size-11 items-center justify-center rounded-md border border-line text-ink lg:hidden",
+						"aria-label": open ? "Close menu" : "Open menu",
+						"aria-expanded": open,
+						onClick: () => setOpen((value) => !value),
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "sr-only",
+							children: "Menu"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+							className: "flex w-4 flex-col gap-1.5",
+							"aria-hidden": "true",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: cn("h-px w-full bg-ink transition-transform", open && "translate-y-[5px] rotate-45") }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: cn("h-px w-full bg-ink transition-opacity", open && "opacity-0") }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: cn("h-px w-full bg-ink transition-transform", open && "-translate-y-[5px] -rotate-45") })
+							]
+						})]
 					})]
 				})
 			]
@@ -94,6 +149,13 @@ function SiteNav() {
 						onClick: () => setOpen(false),
 						children: "Dashboard"
 					}) }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "mt-2 flex items-center justify-between gap-3 border-t border-line pt-4",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-sm text-ink-soft",
+							children: "Appearance"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {})]
+					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 						href: "/#contact",
 						className: "mt-2 inline-flex min-h-11 items-center justify-center rounded-md bg-ink px-5 text-sm font-medium text-page",

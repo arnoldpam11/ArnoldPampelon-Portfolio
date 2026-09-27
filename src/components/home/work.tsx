@@ -145,16 +145,20 @@ export function SwiftFixSection() {
 }
 
 export function ExperienceSection() {
-  const roles = [
+  type WorkRole = {
+    title: string;
+    org?: string;
+    period?: string;
+    companies?: { name: string; period: string }[];
+  };
+
+  const roles: WorkRole[] = [
     {
-      title: "Customer Service Representative",
-      org: "TaskUs",
-      period: "2025–2026",
-    },
-    {
-      title: "BPO / Customer Support",
-      org: "IBEX",
-      period: "2024–2025",
+      title: "BPO / Customer Service Representative",
+      companies: [
+        { name: "IBEX", period: "2024–2025" },
+        { name: "TaskUs", period: "2025–2026" },
+      ],
     },
     {
       title: "Data Entry",
@@ -183,11 +187,22 @@ export function ExperienceSection() {
         <div>
           <ul className="divide-y divide-line border-y border-line">
             {roles.map((role) => (
-              <li key={role.org} className="py-4">
+              <li key={role.title} className="py-4">
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
                   <h3 className="font-medium text-ink">{role.title}</h3>
                   <div className="flex items-baseline justify-between gap-5 sm:shrink-0 sm:justify-end sm:gap-8">
-                    <p className="text-sm text-ink-soft">{role.org}</p>
+                    {role.companies ? (
+                      <p className="text-sm text-ink-soft">
+                        {role.companies.map((company, index) => (
+                          <span key={company.name}>
+                            {index > 0 ? " · " : ""}
+                            {company.name} <span className="font-mono text-xs text-ink-mute">{company.period}</span>
+                          </span>
+                        ))}
+                      </p>
+                    ) : role.org ? (
+                      <p className="text-sm text-ink-soft">{role.org}</p>
+                    ) : null}
                     {role.period ? (
                       <time className="font-mono text-xs tabular-nums text-ink-mute">
                         {role.period}
