@@ -3,9 +3,9 @@ import { a as SITE, i as SERVICES$1, t as BUDGETS } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Select, c as TechLabel, l as Textarea, n as Field, r as Input, t as Button } from "./ui-pg13BgMq.mjs";
 import { o as submitInquiry } from "./lead-actions-DoP-RJIz.mjs";
-import { i as SiteNav, n as Container, r as SiteFooter, t as BrowserFrame } from "./workflow-Btft01Me.mjs";
+import { i as SiteNav, n as Container, r as SiteFooter, t as BrowserFrame } from "./workflow-BxObhbLO.mjs";
 import { n as leadInquirySchema } from "./leads-C5WLjq4l.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BBlJFwFc.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DUFfhJWN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function HeroSection() {
@@ -165,15 +165,11 @@ function SwiftFixSection() {
 				target: "_blank",
 				rel: "noreferrer",
 				className: "inline-flex min-h-12 shrink-0 items-center justify-center rounded-md border border-line-strong px-5 text-sm font-medium text-ink transition-colors hover:bg-surface",
-				children: [
-					"Visit the live website",
-					" ",
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "ml-2",
-						"aria-hidden": "true",
-						children: "↗"
-					})
-				]
+				children: ["Visit the live website ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "ml-2",
+					"aria-hidden": "true",
+					children: "↗"
+				})]
 			})]
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(260px,0.7fr)] lg:gap-12",
@@ -344,7 +340,6 @@ function ExperienceSection() {
 					children: [
 						{
 							label: "Automation & CRM",
-							icon: "workflow",
 							tools: [{
 								name: "Make.com",
 								mark: "M",
@@ -353,11 +348,11 @@ function ExperienceSection() {
 								name: "GoHighLevel",
 								mark: "H",
 								color: "bg-amber-100 text-amber-700"
-							}]
+							}],
+							icon: "workflow"
 						},
 						{
 							label: "AI",
-							icon: "spark",
 							tools: [
 								{
 									name: "AI APIs",
@@ -374,11 +369,11 @@ function ExperienceSection() {
 									mark: "C",
 									color: "bg-sky-100 text-sky-700"
 								}
-							]
+							],
+							icon: "spark"
 						},
 						{
 							label: "Data",
-							icon: "data",
 							tools: [
 								{
 									name: "Supabase",
@@ -395,11 +390,11 @@ function ExperienceSection() {
 									mark: "SQL",
 									color: "bg-cyan-100 text-cyan-800"
 								}
-							]
+							],
+							icon: "data"
 						},
 						{
 							label: "Integrations",
-							icon: "integrations",
 							tools: [
 								{
 									name: "REST APIs",
@@ -416,11 +411,11 @@ function ExperienceSection() {
 									mark: "{}",
 									color: "bg-lime-100 text-lime-800"
 								}
-							]
+							],
+							icon: "integrations"
 						},
 						{
 							label: "Development & deployment",
-							icon: "code",
 							tools: [
 								{
 									name: "HTML",
@@ -452,16 +447,17 @@ function ExperienceSection() {
 									mark: "V",
 									color: "bg-neutral-200 text-neutral-800"
 								}
-							]
+							],
+							icon: "code"
 						},
 						{
 							label: "Customer support",
-							icon: "support",
 							tools: [{
 								name: "Zendesk",
 								mark: "Z",
 								color: "bg-green-100 text-green-800"
-							}]
+							}],
+							icon: "support"
 						}
 					].map((group) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "grid grid-cols-[2.5rem_minmax(0,1fr)] items-center gap-3 border-t border-line py-4",

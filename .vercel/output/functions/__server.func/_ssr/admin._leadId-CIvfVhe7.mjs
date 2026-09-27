@@ -3,8 +3,8 @@ import { o as STATUS_LABEL } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react, x as useNavigate, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { f as useCurrentUserState, i as RedirectToSignIn, s as StatusBadge, t as Button, u as UserButton } from "./ui-pg13BgMq.mjs";
 import { i as getLead, n as deleteLead, s as updateLeadStatus } from "./lead-actions-DoP-RJIz.mjs";
-import { n as Route$1 } from "./router-Av8bY1rT.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin._leadId-B4DIe1H_.js
+import { n as Route$1 } from "./router-CcEah6Us.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin._leadId-CIvfVhe7.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function LeadDetailPage() {

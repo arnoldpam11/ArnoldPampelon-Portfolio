@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { a as SITE, r as NAV_LINKS } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { d as cn, o as SignedIn } from "./ui-pg13BgMq.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/workflow-Btft01Me.js
+//#region node_modules/.nitro/vite/services/ssr/assets/workflow-BxObhbLO.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ThemeToggle() {
@@ -20,19 +20,16 @@ function ThemeToggle() {
 		window.localStorage.setItem("theme", nextDark ? "dark" : "light");
 		document.querySelector("meta[name=\"theme-color\"]")?.setAttribute("content", nextDark ? "#101713" : "#F7F6F2");
 	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 		type: "button",
 		onClick: toggle,
-		className: "inline-flex h-10 items-center justify-center gap-2 rounded-full border border-line-strong bg-surface px-3.5 text-sm font-medium text-ink transition-colors hover:bg-page-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/40",
+		className: "inline-flex size-10 items-center justify-center rounded-full border border-line-strong bg-surface text-ink transition-colors hover:bg-page-alt focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/40",
 		"aria-label": dark ? "Switch to light mode" : "Switch to dark mode",
 		title: dark ? "Switch to light mode" : "Switch to dark mode",
 		"aria-pressed": dark,
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-			className: "text-xs font-medium",
-			children: dark ? "Light mode" : "Dark mode"
-		}), dark ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
+		children: dark ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
 			viewBox: "0 0 24 24",
-			className: "size-4 shrink-0",
+			className: "size-[18px] shrink-0",
 			fill: "none",
 			stroke: "currentColor",
 			strokeWidth: "1.7",
@@ -44,13 +41,13 @@ function ThemeToggle() {
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" })]
 		}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
 			viewBox: "0 0 24 24",
-			className: "size-4 shrink-0",
+			className: "size-[18px] shrink-0",
 			fill: "none",
 			stroke: "currentColor",
 			strokeWidth: "1.7",
 			"aria-hidden": "true",
 			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("path", { d: "M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z" })
-		})]
+		})
 	});
 }
 function Container({ children, className }) {

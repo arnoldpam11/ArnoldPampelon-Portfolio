@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BdIiO5Rf.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-CLQP9lG6.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "C:/Users/ADMIN/Documents/Codex/ArnoldPampelon-Portfolio/src/routes/__root.tsx",
@@ -10,7 +10,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/api/auth/$"
 		],
 		preloads: [
-			"/assets/index-snRAc93e.js",
+			"/assets/index-qFonkmfz.js",
 			"/assets/react-DB-4Zxce.js",
 			"/assets/preload-helper-V4qt2nnV.js",
 			"/assets/site-DL7QAu5-.js"
@@ -18,35 +18,35 @@ var tsrStartManifest = () => ({ routes: {
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-snRAc93e.js"
+			src: "/assets/index-qFonkmfz.js"
 		} }]
 	},
 	"/": {
 		filePath: "C:/Users/ADMIN/Documents/Codex/ArnoldPampelon-Portfolio/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-Cfu5g21p.js",
+			"/assets/routes-CXiA7K_r.js",
 			"/assets/lead-actions-uiL3DL4q.js",
-			"/assets/ui-CfhltKSi.js",
-			"/assets/workflow-CmZ1v2em.js"
+			"/assets/ui-BYtF8xlv.js",
+			"/assets/workflow-B5k8G7Ke.js"
 		]
 	},
 	"/admin": {
 		filePath: "C:/Users/ADMIN/Documents/Codex/ArnoldPampelon-Portfolio/src/routes/admin.tsx",
 		children: ["/admin/$leadId"],
 		preloads: [
-			"/assets/admin-BG8OMA-7.js",
+			"/assets/admin-CvvLC2YS.js",
 			"/assets/lead-actions-uiL3DL4q.js",
-			"/assets/ui-CfhltKSi.js"
+			"/assets/ui-BYtF8xlv.js"
 		]
 	},
 	"/lab": {
 		filePath: "C:/Users/ADMIN/Documents/Codex/ArnoldPampelon-Portfolio/src/routes/lab.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/lab-DATfkJNc.js",
-			"/assets/ui-CfhltKSi.js",
-			"/assets/workflow-CmZ1v2em.js"
+			"/assets/lab-Byg6mtxq.js",
+			"/assets/ui-BYtF8xlv.js",
+			"/assets/workflow-B5k8G7Ke.js"
 		]
 	},
 	"/login": {
@@ -57,7 +57,7 @@ var tsrStartManifest = () => ({ routes: {
 	"/admin/$leadId": {
 		filePath: "C:/Users/ADMIN/Documents/Codex/ArnoldPampelon-Portfolio/src/routes/admin.$leadId.tsx",
 		children: void 0,
-		preloads: ["/assets/admin._leadId-D4lFq8E9.js"]
+		preloads: ["/assets/admin._leadId-hbsUiLKL.js"]
 	}
 } });
 //#endregion
