@@ -2,20 +2,20 @@
 @import "tw-animate-css";
 
 @theme {
-  --color-page: #05080e;
-  --color-page-alt: #080d14;
-  --color-surface: #0d131c;
-  --color-elevated: #111923;
-  --color-ink: #f8fafc;
-  --color-ink-soft: #94a3b8;
-  --color-ink-mute: #64748b;
-  --color-cyan: #22d3ee;
-  --color-teal: #2dd4bf;
-  --color-ok: #34d399;
-  --color-danger: #f87171;
-  --color-line: rgb(248 250 252 / 0.1);
-  --color-line-strong: rgb(248 250 252 / 0.16);
-  --color-cyan-dim: rgb(34 211 238 / 0.12);
+  --color-page: #f7f6f2;
+  --color-page-alt: #efeee9;
+  --color-surface: #fcfbf8;
+  --color-elevated: #f1f0eb;
+  --color-ink: #242925;
+  --color-ink-soft: #5c645d;
+  --color-ink-mute: #7b827b;
+  --color-cyan: #526d5b;
+  --color-teal: #647c69;
+  --color-ok: #526d5b;
+  --color-danger: #a24c43;
+  --color-line: rgb(36 41 37 / 0.12);
+  --color-line-strong: rgb(36 41 37 / 0.22);
+  --color-cyan-dim: rgb(82 109 91 / 0.1);
 
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Syne", "Outfit", ui-sans-serif, system-ui, sans-serif;
@@ -26,7 +26,7 @@
   --radius-lg: 1.125rem;
   --radius-xl: 1.75rem;
 
-  --shadow-panel: 0 24px 80px rgb(0 0 0 / 0.35);
+  --shadow-panel: 0 12px 36px rgb(36 41 37 / 0.07);
 }
 
 @layer base {

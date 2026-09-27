@@ -68,7 +68,7 @@ export function ContactSection() {
   const errorSummary = useMemo(() => Object.values(errors)[0], [errors]);
 
   return (
-    <section id="contact" className="border-t border-line bg-page-alt py-20 lg:py-28">
+    <section id="contact" className="border-t border-line bg-page-alt py-16 sm:py-20 lg:py-24">
       <Container className="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
         <div>
           <TechLabel>Have a repetitive process?</TechLabel>
@@ -78,9 +78,6 @@ export function ContactSection() {
           <p className="mt-5 max-w-md text-lg leading-relaxed text-ink-soft">
             Tell me what you're currently doing manually and what you'd like to happen
             automatically.
-          </p>
-          <p className="mt-8 font-mono text-xs uppercase tracking-widest text-ink-mute">
-            Trigger → AI → Data → Action → Result
           </p>
         </div>
 

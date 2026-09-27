@@ -119,54 +119,32 @@ export function SiteNav() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-page-alt">
-      <Container className="grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr]">
-        <div>
-          <p className="font-display text-xl font-semibold tracking-tight">{SITE.name}</p>
-          <p className="mt-2 text-sm text-ink-soft">{SITE.role}</p>
-          <div className="mt-8 flex items-center gap-3">
-            <img
-              src="/images/artech-logo.webp"
-              alt="ARTECH mark"
-              className="size-10 rounded-md bg-ink object-contain p-1"
-              width={40}
-              height={40}
-            />
-            <div>
-              <p className="text-sm font-medium">{SITE.brand}</p>
-              <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">{SITE.tagline}</p>
-            </div>
+      <Container className="flex flex-col gap-6 py-8 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center gap-3">
+          <img
+            src="/images/artech-logo.webp"
+            alt=""
+            className="size-9 rounded bg-ink object-contain p-1"
+            width={36}
+            height={36}
+          />
+          <div>
+            <p className="text-sm font-medium text-ink">{SITE.name}</p>
+            <p className="text-xs text-ink-mute">{SITE.brand} · {SITE.role}</p>
           </div>
         </div>
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">Navigate</p>
-          <ul className="mt-4 space-y-2">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href} className="text-sm text-ink-soft hover:text-ink">
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <a href="/#contact" className="text-sm text-ink-soft hover:text-ink">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-ink-mute">Work with Arnold</p>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-soft">
-            Practical automation for businesses that want fewer repetitive steps and clearer workflows.
-          </p>
-          <a href="/#contact" className="mt-5 inline-flex text-sm text-cyan hover:text-ink">
-            Let's automate it →
-          </a>
-        </div>
+        <nav className="flex flex-wrap gap-x-6 gap-y-3" aria-label="Footer">
+          {NAV_LINKS.map((link) => (
+            <a key={link.href} href={link.href} className="text-sm text-ink-soft hover:text-ink">
+              {link.label}
+            </a>
+          ))}
+          <a href="/#contact" className="text-sm text-ink-soft hover:text-ink">Contact</a>
+        </nav>
       </Container>
       <Container className="flex flex-col gap-2 border-t border-line py-6 text-sm text-ink-mute sm:flex-row sm:items-center sm:justify-between">
         <p>© 2026 Arnold Pampelon</p>
-        <p className="font-mono text-xs uppercase tracking-widest">{SITE.brand}</p>
+        <p className="font-mono text-xs uppercase tracking-widest">{SITE.tagline}</p>
       </Container>
     </footer>
   );
