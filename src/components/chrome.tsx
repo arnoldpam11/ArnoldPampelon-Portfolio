@@ -4,6 +4,46 @@ import { SignedIn } from "@/lib/auth/gates";
 import { NAV_LINKS, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+function ThemeToggle() {
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialDark = saved ? saved === "dark" : prefersDark;
+    setDark(initialDark);
+    document.documentElement.dataset.theme = initialDark ? "dark" : "light";
+  }, []);
+
+  const toggle = () => {
+    const nextDark = !dark;
+    setDark(nextDark);
+    document.documentElement.dataset.theme = nextDark ? "dark" : "light";
+    window.localStorage.setItem("theme", nextDark ? "dark" : "light");
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      className="inline-flex size-10 items-center justify-center rounded-md border border-line text-ink transition-colors hover:bg-page-alt"
+      aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+      title={dark ? "Switch to light mode" : "Switch to dark mode"}
+    >
+      {dark ? (
+        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+          <path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z" />
+        </svg>
+      )}
+    </button>
+  );
+}
+
 export function Container({
   children,
   className,
@@ -62,6 +102,7 @@ export function SiteNav() {
               Dashboard
             </Link>
           </SignedIn>
+          <ThemeToggle />
           <a
             href="/#contact"
             className="inline-flex min-h-10 items-center justify-center rounded-md bg-ink px-4 text-sm font-medium text-page transition-colors hover:bg-ink/90"
@@ -102,6 +143,10 @@ export function SiteNav() {
                 Dashboard
               </Link>
             </SignedIn>
+            <div className="mt-2 flex items-center justify-between gap-3 border-t border-line pt-4">
+              <span className="text-sm text-ink-soft">Appearance</span>
+              <ThemeToggle />
+            </div>
             <a
               href="/#contact"
               className="mt-2 inline-flex min-h-11 items-center justify-center rounded-md bg-ink px-5 text-sm font-medium text-page"
