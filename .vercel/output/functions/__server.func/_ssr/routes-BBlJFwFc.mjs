@@ -3,9 +3,9 @@ import { a as SITE, i as SERVICES$1, t as BUDGETS } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Select, c as TechLabel, l as Textarea, n as Field, r as Input, t as Button } from "./ui-pg13BgMq.mjs";
 import { o as submitInquiry } from "./lead-actions-DoP-RJIz.mjs";
-import { i as SiteNav, n as Container, r as SiteFooter, t as BrowserFrame } from "./workflow-DoapVhVM.mjs";
+import { i as SiteNav, n as Container, r as SiteFooter, t as BrowserFrame } from "./workflow-Btft01Me.mjs";
 import { n as leadInquirySchema } from "./leads-C5WLjq4l.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DSwNHuf8.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BBlJFwFc.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function HeroSection() {
@@ -48,7 +48,7 @@ function HeroSection() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 						src: "/images/artech-logo.webp",
 						alt: "",
-						className: "size-9 rounded bg-ink object-contain p-1",
+						className: "artech-mark size-9 rounded object-contain p-1",
 						width: 36,
 						height: 36
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -165,11 +165,15 @@ function SwiftFixSection() {
 				target: "_blank",
 				rel: "noreferrer",
 				className: "inline-flex min-h-12 shrink-0 items-center justify-center rounded-md border border-line-strong px-5 text-sm font-medium text-ink transition-colors hover:bg-surface",
-				children: ["Visit the live website ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "ml-2",
-					"aria-hidden": "true",
-					children: "↗"
-				})]
+				children: [
+					"Visit the live website",
+					" ",
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "ml-2",
+						"aria-hidden": "true",
+						children: "↗"
+					})
+				]
 			})]
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mt-10 grid items-start gap-8 lg:grid-cols-[minmax(0,1.5fr)_minmax(260px,0.7fr)] lg:gap-12",
@@ -283,10 +287,12 @@ function ExperienceSection() {
 					title: "BPO / Customer Service Representative",
 					companies: [{
 						name: "IBEX",
-						period: "2024–2025"
+						period: "2024–2025",
+						logo: "https://mms.businesswire.com/media/20210127005188/en/811226/23/ibex-Logo.jpg"
 					}, {
 						name: "TaskUs",
-						period: "2025–2026"
+						period: "2025–2026",
+						logo: "https://mms.businesswire.com/media/20260224268151/en/2730206/22/taskus-logo.jpg"
 					}]
 				}, {
 					title: "Data Entry",
@@ -299,18 +305,25 @@ function ExperienceSection() {
 							className: "font-medium text-ink",
 							children: role.title
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-baseline justify-between gap-5 sm:shrink-0 sm:justify-end sm:gap-8",
-							children: [role.companies ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-sm text-ink-soft",
-								children: role.companies.map((company, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [
-									index > 0 ? " · " : "",
-									company.name,
-									" ",
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-										className: "font-mono text-xs text-ink-mute",
+							className: "flex flex-col gap-2 sm:shrink-0 sm:items-end",
+							children: [role.companies ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "flex flex-wrap items-center gap-x-5 gap-y-2",
+								children: role.companies.map((company) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									className: "inline-flex items-center gap-2.5",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "flex h-8 w-[4.5rem] items-center justify-center overflow-hidden rounded bg-white px-1.5",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+											src: company.logo,
+											alt: `${company.name} logo`,
+											className: "max-h-full max-w-full object-contain",
+											loading: "lazy",
+											referrerPolicy: "no-referrer"
+										})
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "font-mono text-xs tabular-nums text-ink-mute",
 										children: company.period
-									})
-								] }, company.name))
+									})]
+								}, company.name))
 							}) : role.org ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "text-sm text-ink-soft",
 								children: role.org
@@ -331,38 +344,129 @@ function ExperienceSection() {
 					children: [
 						{
 							label: "Automation & CRM",
-							tools: "Make.com · GoHighLevel",
-							icon: "workflow"
+							icon: "workflow",
+							tools: [{
+								name: "Make.com",
+								mark: "M",
+								color: "bg-violet-100 text-violet-700"
+							}, {
+								name: "GoHighLevel",
+								mark: "H",
+								color: "bg-amber-100 text-amber-700"
+							}]
 						},
 						{
 							label: "AI",
-							tools: "AI APIs · Assistants · Chatbots",
-							icon: "spark"
+							icon: "spark",
+							tools: [
+								{
+									name: "AI APIs",
+									mark: "AI",
+									color: "bg-indigo-100 text-indigo-700"
+								},
+								{
+									name: "Assistants",
+									mark: "A",
+									color: "bg-fuchsia-100 text-fuchsia-700"
+								},
+								{
+									name: "Chatbots",
+									mark: "C",
+									color: "bg-sky-100 text-sky-700"
+								}
+							]
 						},
 						{
 							label: "Data",
-							tools: "Supabase · PostgreSQL · SQL",
-							icon: "data"
+							icon: "data",
+							tools: [
+								{
+									name: "Supabase",
+									mark: "S",
+									color: "bg-emerald-100 text-emerald-700"
+								},
+								{
+									name: "PostgreSQL",
+									mark: "P",
+									color: "bg-blue-100 text-blue-700"
+								},
+								{
+									name: "SQL",
+									mark: "SQL",
+									color: "bg-cyan-100 text-cyan-800"
+								}
+							]
 						},
 						{
 							label: "Integrations",
-							tools: "REST APIs · Webhooks · JSON",
-							icon: "integrations"
+							icon: "integrations",
+							tools: [
+								{
+									name: "REST APIs",
+									mark: "API",
+									color: "bg-orange-100 text-orange-700"
+								},
+								{
+									name: "Webhooks",
+									mark: "↗",
+									color: "bg-teal-100 text-teal-700"
+								},
+								{
+									name: "JSON",
+									mark: "{}",
+									color: "bg-lime-100 text-lime-800"
+								}
+							]
 						},
 						{
 							label: "Development & deployment",
-							tools: "HTML · CSS · JavaScript · React · GitHub · Vercel",
-							icon: "code"
+							icon: "code",
+							tools: [
+								{
+									name: "HTML",
+									mark: "5",
+									color: "bg-orange-100 text-orange-700"
+								},
+								{
+									name: "CSS",
+									mark: "3",
+									color: "bg-blue-100 text-blue-700"
+								},
+								{
+									name: "JavaScript",
+									mark: "JS",
+									color: "bg-yellow-100 text-yellow-800"
+								},
+								{
+									name: "React",
+									mark: "R",
+									color: "bg-cyan-100 text-cyan-800"
+								},
+								{
+									name: "GitHub",
+									mark: "GH",
+									color: "bg-slate-200 text-slate-800"
+								},
+								{
+									name: "Vercel",
+									mark: "V",
+									color: "bg-neutral-200 text-neutral-800"
+								}
+							]
 						},
 						{
 							label: "Customer support",
-							tools: "Zendesk",
-							icon: "support"
+							icon: "support",
+							tools: [{
+								name: "Zendesk",
+								mark: "Z",
+								color: "bg-green-100 text-green-800"
+							}]
 						}
 					].map((group) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "grid grid-cols-[2.5rem_minmax(0,1fr)] items-center gap-3 border-t border-line py-4",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "flex size-9 items-center justify-center rounded-full border border-line bg-surface text-cyan",
+							className: `flex size-9 items-center justify-center rounded-xl border border-line bg-surface ${group.icon === "workflow" ? "text-violet-600" : group.icon === "spark" ? "text-fuchsia-600" : group.icon === "data" ? "text-emerald-600" : group.icon === "integrations" ? "text-orange-600" : group.icon === "code" ? "text-blue-600" : "text-green-600"}`,
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
 								"aria-hidden": "true",
 								viewBox: "0 0 24 24",
@@ -481,8 +585,15 @@ function ExperienceSection() {
 							className: "text-xs font-medium text-ink-mute",
 							children: group.label
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("dd", {
-							className: "mt-1 text-sm leading-relaxed text-ink",
-							children: group.tools
+							className: "mt-2 flex flex-wrap gap-1.5",
+							children: group.tools.map((tool) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2 py-1 text-xs font-medium text-ink",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									"aria-hidden": "true",
+									className: `flex size-[1.125rem] items-center justify-center rounded-md text-[9px] font-bold leading-none ${tool.color}`,
+									children: tool.mark
+								}), tool.name]
+							}, tool.name))
 						})] })]
 					}, group.label))
 				})]

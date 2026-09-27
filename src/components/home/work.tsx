@@ -149,15 +149,23 @@ export function ExperienceSection() {
     title: string;
     org?: string;
     period?: string;
-    companies?: { name: string; period: string }[];
+    companies?: { name: string; period: string; logo: string }[];
   };
 
   const roles: WorkRole[] = [
     {
       title: "BPO / Customer Service Representative",
       companies: [
-        { name: "IBEX", period: "2024–2025" },
-        { name: "TaskUs", period: "2025–2026" },
+        {
+          name: "IBEX",
+          period: "2024–2025",
+          logo: "https://mms.businesswire.com/media/20210127005188/en/811226/23/ibex-Logo.jpg",
+        },
+        {
+          name: "TaskUs",
+          period: "2025–2026",
+          logo: "https://mms.businesswire.com/media/20260224268151/en/2730206/22/taskus-logo.jpg",
+        },
       ],
     },
     {
@@ -167,12 +175,58 @@ export function ExperienceSection() {
   ];
 
   const toolGroups = [
-    { label: "Automation & CRM", tools: "Make.com · GoHighLevel", icon: "workflow" },
-    { label: "AI", tools: "AI APIs · Assistants · Chatbots", icon: "spark" },
-    { label: "Data", tools: "Supabase · PostgreSQL · SQL", icon: "data" },
-    { label: "Integrations", tools: "REST APIs · Webhooks · JSON", icon: "integrations" },
-    { label: "Development & deployment", tools: "HTML · CSS · JavaScript · React · GitHub · Vercel", icon: "code" },
-    { label: "Customer support", tools: "Zendesk", icon: "support" },
+    {
+      label: "Automation & CRM",
+      tools: [
+        { name: "Make.com", mark: "M", color: "bg-violet-100 text-violet-700" },
+        { name: "GoHighLevel", mark: "H", color: "bg-amber-100 text-amber-700" },
+      ],
+      icon: "workflow",
+    },
+    {
+      label: "AI",
+      tools: [
+        { name: "AI APIs", mark: "AI", color: "bg-indigo-100 text-indigo-700" },
+        { name: "Assistants", mark: "A", color: "bg-fuchsia-100 text-fuchsia-700" },
+        { name: "Chatbots", mark: "C", color: "bg-sky-100 text-sky-700" },
+      ],
+      icon: "spark",
+    },
+    {
+      label: "Data",
+      tools: [
+        { name: "Supabase", mark: "S", color: "bg-emerald-100 text-emerald-700" },
+        { name: "PostgreSQL", mark: "P", color: "bg-blue-100 text-blue-700" },
+        { name: "SQL", mark: "SQL", color: "bg-cyan-100 text-cyan-800" },
+      ],
+      icon: "data",
+    },
+    {
+      label: "Integrations",
+      tools: [
+        { name: "REST APIs", mark: "API", color: "bg-orange-100 text-orange-700" },
+        { name: "Webhooks", mark: "↗", color: "bg-teal-100 text-teal-700" },
+        { name: "JSON", mark: "{}", color: "bg-lime-100 text-lime-800" },
+      ],
+      icon: "integrations",
+    },
+    {
+      label: "Development & deployment",
+      tools: [
+        { name: "HTML", mark: "5", color: "bg-orange-100 text-orange-700" },
+        { name: "CSS", mark: "3", color: "bg-blue-100 text-blue-700" },
+        { name: "JavaScript", mark: "JS", color: "bg-yellow-100 text-yellow-800" },
+        { name: "React", mark: "R", color: "bg-cyan-100 text-cyan-800" },
+        { name: "GitHub", mark: "GH", color: "bg-slate-200 text-slate-800" },
+        { name: "Vercel", mark: "V", color: "bg-neutral-200 text-neutral-800" },
+      ],
+      icon: "code",
+    },
+    {
+      label: "Customer support",
+      tools: [{ name: "Zendesk", mark: "Z", color: "bg-green-100 text-green-800" }],
+      icon: "support",
+    },
   ];
 
   return (
@@ -190,16 +244,27 @@ export function ExperienceSection() {
               <li key={role.title} className="py-4">
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
                   <h3 className="font-medium text-ink">{role.title}</h3>
-                  <div className="flex items-baseline justify-between gap-5 sm:shrink-0 sm:justify-end sm:gap-8">
+                  <div className="flex flex-col gap-2 sm:shrink-0 sm:items-end">
                     {role.companies ? (
-                      <p className="text-sm text-ink-soft">
-                        {role.companies.map((company, index) => (
-                          <span key={company.name}>
-                            {index > 0 ? " · " : ""}
-                            {company.name} <span className="font-mono text-xs text-ink-mute">{company.period}</span>
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                        {role.companies.map((company) => (
+                          <span
+                            key={company.name}
+                            className="inline-flex items-center gap-2.5"
+                          >
+                            <span className="flex h-8 w-[4.5rem] items-center justify-center overflow-hidden rounded bg-white px-1.5">
+                              <img
+                                src={company.logo}
+                                alt={`${company.name} logo`}
+                                className="max-h-full max-w-full object-contain"
+                                loading="lazy"
+                                referrerPolicy="no-referrer"
+                              />
+                            </span>
+                            <span className="font-mono text-xs tabular-nums text-ink-mute">{company.period}</span>
                           </span>
                         ))}
-                      </p>
+                      </div>
                     ) : role.org ? (
                       <p className="text-sm text-ink-soft">{role.org}</p>
                     ) : null}
@@ -221,7 +286,21 @@ export function ExperienceSection() {
             <dl className="mt-4 grid gap-x-8 sm:grid-cols-2">
               {toolGroups.map((group) => (
                 <div key={group.label} className="grid grid-cols-[2.5rem_minmax(0,1fr)] items-center gap-3 border-t border-line py-4">
-                  <span className="flex size-9 items-center justify-center rounded-full border border-line bg-surface text-cyan">
+                  <span
+                    className={`flex size-9 items-center justify-center rounded-xl border border-line bg-surface ${
+                      group.icon === "workflow"
+                        ? "text-violet-600"
+                        : group.icon === "spark"
+                          ? "text-fuchsia-600"
+                          : group.icon === "data"
+                            ? "text-emerald-600"
+                            : group.icon === "integrations"
+                              ? "text-orange-600"
+                              : group.icon === "code"
+                                ? "text-blue-600"
+                                : "text-green-600"
+                    }`}
+                  >
                     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-[18px]">
                       {group.icon === "workflow" ? (
                         <>
@@ -265,7 +344,22 @@ export function ExperienceSection() {
                   </span>
                   <div>
                     <dt className="text-xs font-medium text-ink-mute">{group.label}</dt>
-                    <dd className="mt-1 text-sm leading-relaxed text-ink">{group.tools}</dd>
+                    <dd className="mt-2 flex flex-wrap gap-1.5">
+                      {group.tools.map((tool) => (
+                        <span
+                          key={tool.name}
+                          className="inline-flex items-center gap-1.5 rounded-full border border-line bg-surface px-2 py-1 text-xs font-medium text-ink"
+                        >
+                          <span
+                            aria-hidden="true"
+                            className={`flex size-[1.125rem] items-center justify-center rounded-md text-[9px] font-bold leading-none ${tool.color}`}
+                          >
+                            {tool.mark}
+                          </span>
+                          {tool.name}
+                        </span>
+                      ))}
+                    </dd>
                   </div>
                 </div>
               ))}

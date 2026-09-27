@@ -138,6 +138,14 @@
   mask-image: radial-gradient(ellipse at 50% 0%, black 20%, transparent 72%);
 }
 
+.artech-mark {
+  mix-blend-mode: multiply;
+}
+
+:root[data-theme="dark"] .artech-mark {
+  background-color: #fff;
+  mix-blend-mode: normal;
+}
 
 /* Theme overrides */
 :root[data-theme="dark"] {

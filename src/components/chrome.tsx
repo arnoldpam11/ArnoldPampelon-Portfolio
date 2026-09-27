@@ -177,7 +177,7 @@ export function SiteFooter() {
           <img
             src="/images/artech-logo.webp"
             alt=""
-            className="size-9 rounded bg-ink object-contain p-1"
+            className="artech-mark size-9 rounded object-contain p-1"
             width={36}
             height={36}
           />

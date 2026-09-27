@@ -5,7 +5,7 @@ import { F as object, M as literal, P as number, R as string, z as union } from 
 import { C as require_jsx_runtime, S as useRouter, X as require_react, _ as createFileRoute, d as Scripts, f as HeadContent, g as lazyRouteComponent, h as Outlet, m as createRouter, v as createRootRoute } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as auth } from "./server-CASH6cq5.mjs";
 import { t as TriangleAlert } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-B2OtxkZ7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Av8bY1rT.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var FALLBACK_MESSAGE = "An unexpected error occurred. Try reloading the page.";
@@ -299,7 +299,7 @@ function PreviewHostBridge() {
 	}, [router]);
 	return null;
 }
-var styles_default = "/assets/styles-Dl-0rp4l.css";
+var styles_default = "/assets/styles-CPiJSK9d.css";
 var Route$6 = createRootRoute({
 	head: () => ({
 		meta: [
@@ -384,15 +384,15 @@ function RootDocument() {
 		})]
 	});
 }
-var $$splitComponentImporter$4 = () => import("./routes-DSwNHuf8.mjs");
+var $$splitComponentImporter$4 = () => import("./routes-BBlJFwFc.mjs");
 var Route$5 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$4, "component") });
 var $$splitComponentImporter$3 = () => import("./admin-BTXmPRqG.mjs");
 var Route$4 = createFileRoute("/admin")({ component: lazyRouteComponent($$splitComponentImporter$3, "component") });
-var $$splitComponentImporter$2 = () => import("./lab-GBKVXAWG.mjs");
+var $$splitComponentImporter$2 = () => import("./lab-ChdBpWbd.mjs");
 var Route$3 = createFileRoute("/lab")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
 var $$splitComponentImporter$1 = () => import("./login-B2lKz2mG.mjs");
 var Route$2 = createFileRoute("/login")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./admin._leadId-waDlRWaX.mjs");
+var $$splitComponentImporter = () => import("./admin._leadId-B4DIe1H_.mjs");
 var Route$1 = createFileRoute("/admin/$leadId")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var Route = createFileRoute("/api/auth/$")({ server: { handlers: {
 	GET: ({ request }) => auth.handler(request),

@@ -2,7 +2,7 @@ import { o as __toESM } from "../_runtime.mjs";
 import { a as SITE, r as NAV_LINKS } from "./site-DvMkYlXS.mjs";
 import { C as require_jsx_runtime, X as require_react, y as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { d as cn, o as SignedIn } from "./ui-pg13BgMq.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/workflow-DoapVhVM.js
+//#region node_modules/.nitro/vite/services/ssr/assets/workflow-Btft01Me.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function ThemeToggle() {
@@ -177,7 +177,7 @@ function SiteFooter() {
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 					src: "/images/artech-logo.webp",
 					alt: "",
-					className: "size-9 rounded bg-ink object-contain p-1",
+					className: "artech-mark size-9 rounded object-contain p-1",
 					width: 36,
 					height: 36
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
