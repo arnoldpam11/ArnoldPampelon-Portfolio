@@ -5,14 +5,15 @@ import { NAV_LINKS, SITE } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function ThemeToggle() {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialDark = saved ? saved === "dark" : prefersDark;
+    const initialDark = saved ? saved === "dark" : true;
     setDark(initialDark);
     document.documentElement.dataset.theme = initialDark ? "dark" : "light";
+    const meta = document.querySelector('meta[name="theme-color"]');
+    meta?.setAttribute("content", initialDark ? "#05080E" : "#F7F6F2");
   }, []);
 
   const toggle = () => {
@@ -20,6 +21,8 @@ function ThemeToggle() {
     setDark(nextDark);
     document.documentElement.dataset.theme = nextDark ? "dark" : "light";
     window.localStorage.setItem("theme", nextDark ? "dark" : "light");
+    const meta = document.querySelector('meta[name="theme-color"]');
+    meta?.setAttribute("content", nextDark ? "#05080E" : "#F7F6F2");
   };
 
   return (
@@ -110,20 +113,23 @@ export function SiteNav() {
             Let's Talk
           </a>
         </div>
-        <button
-          type="button"
-          className="inline-flex size-11 items-center justify-center rounded-md border border-line text-ink lg:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="sr-only">Menu</span>
-          <span className="flex w-4 flex-col gap-1.5" aria-hidden="true">
-            <span className={cn("h-px w-full bg-ink transition-transform", open && "translate-y-[5px] rotate-45")} />
-            <span className={cn("h-px w-full bg-ink transition-opacity", open && "opacity-0")} />
-            <span className={cn("h-px w-full bg-ink transition-transform", open && "-translate-y-[5px] -rotate-45")} />
-          </span>
-        </button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex size-11 items-center justify-center rounded-md border border-line text-ink lg:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="sr-only">Menu</span>
+            <span className="flex w-4 flex-col gap-1.5" aria-hidden="true">
+              <span className={cn("h-px w-full bg-ink transition-transform", open && "translate-y-[5px] rotate-45")} />
+              <span className={cn("h-px w-full bg-ink transition-opacity", open && "opacity-0")} />
+              <span className={cn("h-px w-full bg-ink transition-transform", open && "-translate-y-[5px] -rotate-45")} />
+            </span>
+          </button>
+        </div>
       </Container>
       {open ? (
         <div className="border-t border-line bg-page lg:hidden">
