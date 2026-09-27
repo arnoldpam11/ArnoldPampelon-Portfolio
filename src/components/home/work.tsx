@@ -95,9 +95,30 @@ export function SwiftFixSection() {
             url={SITE.swiftfixUrl.replace("https://", "")}
           />
           <div className="border-t border-line pt-5">
-            <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-ink-mute">
-              Project snapshot
-            </h3>
+            <div className="flex items-center gap-3">
+              <span className="flex size-9 items-center justify-center rounded-full border border-line bg-cyan-dim text-cyan">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="size-[18px]"
+                >
+                  <path
+                    d="M7 7.5h3.25A3.75 3.75 0 0 1 14 11.25v1.5a3.75 3.75 0 0 0 3.75 3.75H18M7 16.5h3.25A3.75 3.75 0 0 0 14 12.75v-1.5A3.75 3.75 0 0 1 17.75 7.5H18"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                    strokeLinecap="round"
+                  />
+                  <circle cx="5" cy="7.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                  <circle cx="19" cy="7.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                  <circle cx="5" cy="16.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                  <circle cx="19" cy="16.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                </svg>
+              </span>
+              <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-ink-mute">
+                Project snapshot
+              </h3>
+            </div>
             <dl className="mt-4 divide-y divide-line border-y border-line">
               <div className="grid gap-1 py-4 sm:grid-cols-[5rem_1fr] sm:gap-4">
                 <dt className="text-sm text-ink-mute">Client</dt>
@@ -112,7 +133,7 @@ export function SwiftFixSection() {
                 </dd>
               </div>
               <div className="grid gap-1 py-4 sm:grid-cols-[5rem_1fr] sm:gap-4">
-                <dt className="text-sm text-ink-mute">Stack</dt>
+                <dt className="text-sm text-ink-mute">Tools used</dt>
                 <dd className="text-sm leading-relaxed text-ink">Supabase · Vercel · GitHub</dd>
               </div>
             </dl>
@@ -125,9 +146,29 @@ export function SwiftFixSection() {
 
 export function ExperienceSection() {
   const roles = [
-    { title: "Customer Service Representative", org: "TaskUs" },
-    { title: "BPO / Customer Support", org: "IBEX" },
-    { title: "Data Entry", org: "Operations support" },
+    {
+      title: "Customer Service Representative",
+      org: "TaskUs",
+      period: "2025–2026",
+    },
+    {
+      title: "BPO / Customer Support",
+      org: "IBEX",
+      period: "2024–2025",
+    },
+    {
+      title: "Data Entry",
+      org: "Operations support",
+    },
+  ];
+
+  const toolGroups = [
+    { label: "Automation & CRM", tools: "Make.com · GoHighLevel", icon: "workflow" },
+    { label: "AI", tools: "AI APIs · Assistants · Chatbots", icon: "spark" },
+    { label: "Data", tools: "Supabase · PostgreSQL · SQL", icon: "data" },
+    { label: "Integrations", tools: "REST APIs · Webhooks · JSON", icon: "integrations" },
+    { label: "Development & deployment", tools: "HTML · CSS · JavaScript · React · GitHub · Vercel", icon: "code" },
+    { label: "Customer support", tools: "Zendesk", icon: "support" },
   ];
 
   return (
@@ -139,14 +180,83 @@ export function ExperienceSection() {
             Professional experience
           </h2>
         </div>
-        <ul className="divide-y divide-line border-y border-line">
-          {roles.map((role) => (
-            <li key={role.title} className="flex flex-col gap-1 py-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
-              <h3 className="font-medium text-ink">{role.title}</h3>
-              <p className="text-sm text-ink-soft">{role.org}</p>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <ul className="divide-y divide-line border-y border-line">
+            {roles.map((role) => (
+              <li key={role.org} className="py-4">
+                <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-5">
+                  <h3 className="font-medium text-ink">{role.title}</h3>
+                  <div className="flex items-baseline justify-between gap-5 sm:shrink-0 sm:justify-end sm:gap-8">
+                    <p className="text-sm text-ink-soft">{role.org}</p>
+                    {role.period ? (
+                      <time className="font-mono text-xs tabular-nums text-ink-mute">
+                        {role.period}
+                      </time>
+                    ) : null}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 border-t border-line pt-5">
+            <h3 className="font-mono text-xs uppercase tracking-[0.16em] text-ink-mute">
+              Tools &amp; technology
+            </h3>
+            <dl className="mt-4 grid gap-x-8 sm:grid-cols-2">
+              {toolGroups.map((group) => (
+                <div key={group.label} className="grid grid-cols-[2.5rem_minmax(0,1fr)] items-center gap-3 border-t border-line py-4">
+                  <span className="flex size-9 items-center justify-center rounded-full border border-line bg-surface text-cyan">
+                    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="size-[18px]">
+                      {group.icon === "workflow" ? (
+                        <>
+                          <circle cx="6" cy="7" r="2" stroke="currentColor" strokeWidth="1.6" />
+                          <circle cx="18" cy="7" r="2" stroke="currentColor" strokeWidth="1.6" />
+                          <circle cx="12" cy="17" r="2" stroke="currentColor" strokeWidth="1.6" />
+                          <path d="M8 7h2a2 2 0 0 1 2 2v6m2-8h-2a2 2 0 0 0-2 2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                        </>
+                      ) : null}
+                      {group.icon === "spark" ? (
+                        <>
+                          <path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                          <path d="m19 15 .9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15Z" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" />
+                        </>
+                      ) : null}
+                      {group.icon === "data" ? (
+                        <>
+                          <ellipse cx="12" cy="6" rx="7" ry="3" stroke="currentColor" strokeWidth="1.6" />
+                          <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" stroke="currentColor" strokeWidth="1.6" />
+                        </>
+                      ) : null}
+                      {group.icon === "integrations" ? (
+                        <>
+                          <path d="M8 8.5 16 15.5M16 8.5 8 15.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+                          <circle cx="6" cy="6.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                          <circle cx="18" cy="6.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                          <circle cx="6" cy="17.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                          <circle cx="18" cy="17.5" r="2" stroke="currentColor" strokeWidth="1.6" />
+                        </>
+                      ) : null}
+                      {group.icon === "code" ? (
+                        <path d="m8 7-5 5 5 5m8-10 5 5-5 5m-2-12-4 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      ) : null}
+                      {group.icon === "support" ? (
+                        <>
+                          <path d="M4 13v-1a8 8 0 0 1 16 0v1m-16 0v3a2 2 0 0 0 2 2h1v-6H6a2 2 0 0 0-2 1Zm16 0v3a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 1Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                          <path d="M9 20h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        </>
+                      ) : null}
+                    </svg>
+                  </span>
+                  <div>
+                    <dt className="text-xs font-medium text-ink-mute">{group.label}</dt>
+                    <dd className="mt-1 text-sm leading-relaxed text-ink">{group.tools}</dd>
+                  </div>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </div>
       </Container>
     </section>
   );
