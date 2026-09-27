@@ -29,17 +29,20 @@ function ThemeToggle() {
     <button
       type="button"
       onClick={toggle}
-      className="inline-flex size-10 items-center justify-center rounded-md border border-line text-ink transition-colors hover:bg-page-alt"
+      className="inline-flex h-10 items-center justify-center gap-2 rounded-md border border-line bg-page px-3 text-ink transition-colors hover:bg-page-alt"
       aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
       title={dark ? "Switch to light mode" : "Switch to dark mode"}
     >
+      <span className="text-xs font-medium uppercase tracking-[0.12em]">
+        {dark ? "Light mode" : "Dark mode"}
+      </span>
       {dark ? (
-        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
           <circle cx="12" cy="12" r="4" />
           <path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42" />
         </svg>
       ) : (
-        <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="size-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
           <path d="M20.5 14.7A8.5 8.5 0 0 1 9.3 3.5 8.5 8.5 0 1 0 20.5 14.7Z" />
         </svg>
       )}
