@@ -11,7 +11,7 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: SITE.title },
       { name: "description", content: SITE.description },
-      { name: "theme-color", content: "#F7F6F2" },
+      { name: "theme-color", content: "#05080E" },
       { name: "author", content: SITE.name },
     ],
     links: [
@@ -34,6 +34,18 @@ function RootDocument() {
   return (
     <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+              try {
+                const saved = localStorage.getItem("theme");
+                document.documentElement.dataset.theme = saved === "light" ? "light" : "dark";
+              } catch {
+                document.documentElement.dataset.theme = "dark";
+              }
+            })();`,
+          }}
+        />
         <HeadContent />
       </head>
       <body className="bg-page text-ink">
