@@ -520,7 +520,7 @@
       .book-note { margin-top: 16px; font-size: .82rem; color: var(--muted); text-align: center; }
       .book-embed { margin-top: 22px; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; background: #fff; }
       .cal-wrap { position: relative; min-height: 660px; }
-      .calendly-inline-widget { position: relative; z-index: 1; min-width: 260px; height: 660px; }
+      .cal-frame { display: block; width: 100%; height: 660px; border: 0; position: relative; z-index: 1; background: #fff; }
       .cal-state { position: absolute; inset: 0; display: grid; place-items: center; padding: 28px; text-align: center; color: #5B6F6A; font-size: .92rem; }
       .cal-state .spin { width: 32px; height: 32px; border-radius: 50%; border: 3px solid #BFE0D8; border-top-color: #0F766E; animation: ringSpin .8s linear infinite; margin: 0 auto 12px; }
       .cal-state .btn { margin-top: 14px; }
@@ -717,8 +717,8 @@
         .hero-ctas .btn { width: 100%; }
         .dlg-inner { padding: 28px 24px; }
         .book-card { padding: 28px 22px; }
-        .calendly-inline-widget { height: 600px; }
-        .cal-wrap { min-height: 600px; }
+        .cal-frame { height: 640px; }
+        .cal-wrap { min-height: 640px; }
         body { font-size: 16px; }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -1371,20 +1371,20 @@
 
             <div class="book-card">
               <h3>Book a discovery call</h3>
-              <p>The fastest way to book: tap the button to open my live Calendly calendar in a new tab and pick any open slot — it adjusts to your time zone automatically. The same calendar is embedded below when your browser allows it.</p>
-              <a class="btn btn-primary btn-lg btn-book-main" href="https://calendly.com/pampelon-arnold11/30min" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-                Book a 30-Minute Call
-              </a>
-              <p class="book-alt-note">Opens calendly.com in a new tab — free, no account needed.</p>
+              <p>Pick a date and time in the calendar below — it's my live Calendly, and it adjusts to your time zone automatically. Free, no account needed.</p>
               <div class="book-embed" id="bookingEmbed">
                 <div class="cal-wrap">
                   <div class="cal-state" id="calLoading" role="status">
                     <div><div class="spin" aria-hidden="true"></div>Loading the booking calendar…</div>
                   </div>
-                  <div class="calendly-inline-widget" data-url="https://calendly.com/pampelon-arnold11/30min" style="min-width:260px;height:660px" title="Discovery call booking calendar — Calendly, Arnold Pampelon, 30 minutes"></div>
+                  <iframe class="cal-frame" id="calFrame" src="https://calendly.com/pampelon-arnold11/30min" title="Book a 30-minute discovery call — Calendly calendar for Arnold Pampelon" allow="payment" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
               </div>
+              <a class="btn btn-ghost btn-book-main" href="https://calendly.com/pampelon-arnold11/30min" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Open the Calendar in a New Tab
+              </a>
+              <p class="book-alt-note">Same live calendar as the embed above, opened on calendly.com.</p>
               <div class="cal-fallback" id="calFallback" hidden>
                 <p>The embedded calendar couldn't load in this view — no problem. The button below opens the same live calendar in a new tab:</p>
                 <a class="btn btn-primary" href="https://calendly.com/pampelon-arnold11/30min" target="_blank" rel="noopener">
@@ -1611,18 +1611,19 @@
           mqTrack.appendChild(mqClone);
         }
 
-        /* ---------- Booking embed (Calendly inline widget) ----------
-           The primary booking path is the "Book a 30-Minute Call" button
-           (opens Calendly in a new tab). The inline widget below it is a
-           bonus: Calendly posts a message event once it truly renders,
-           which is the success signal we trust. If that signal never
-           arrives, the whole embed is swapped for the fallback panel so a
-           broken grey box is never what the visitor sees. */
+        /* ---------- Booking embed (Calendly inline iframe) ----------
+           The calendar is embedded directly as an iframe pointing at the
+           live Calendly booking page — the same calendar the "Open the
+           Calendar in a New Tab" button opens — with no dependency on
+           Calendly's external widget script. Success is signalled by the
+           iframe's own load event, or by a calendly.* postMessage once
+           the calendar truly renders. If neither arrives, the embed is
+           swapped for the fallback panel so a broken grey box is never
+           what the visitor is left with. */
         var calLoading = document.getElementById("calLoading");
         var calEmbed = document.getElementById("bookingEmbed");
         var calFallback = document.getElementById("calFallback");
-        var calWidget = document.querySelector(".calendly-inline-widget");
-        if (calWidget && BOOKING_URL) calWidget.setAttribute("data-url", BOOKING_URL);
+        var calFrame = document.getElementById("calFrame");
         var calLoaded = false;
         var calFailed = false;
         function calReady() {
@@ -1634,6 +1635,7 @@
             if (calFallback) calFallback.hidden = true;
           }
         }
+        if (calFrame) calFrame.addEventListener("load", calReady);
         window.addEventListener("message", function (ev) {
           if (ev.origin && ev.origin.indexOf("calendly.com") !== -1 && ev.data && typeof ev.data.event === "string" && ev.data.event.indexOf("calendly.") === 0) {
             calReady();
@@ -1645,7 +1647,7 @@
             if (calEmbed) calEmbed.hidden = true;
             if (calFallback) calFallback.hidden = false;
           }
-        }, 12000);
+        }, 15000);
 
         /* ---------- Scroll reveal animations (both directions) ---------- */
         function tagReveal(sel, fx, stagger) {
@@ -1745,6 +1747,5 @@
         document.getElementById("year").textContent = new Date().getFullYear();
       })();
     </script>
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
   </body>
 </html>
