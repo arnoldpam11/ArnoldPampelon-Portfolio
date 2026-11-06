@@ -77,7 +77,7 @@
       }
 
       * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; scroll-padding-top: 92px; overflow-x: clip; }
+      html { scroll-behavior: smooth; scroll-padding-top: 92px; overflow-x: hidden; overflow-x: clip; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
       body {
         margin: 0;
         font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -86,7 +86,8 @@
         font-size: 16.5px;
         line-height: 1.65;
         -webkit-font-smoothing: antialiased;
-        overflow-x: clip;
+        overflow-x: hidden; overflow-x: clip;
+        overflow-wrap: break-word;
         transition: background-color .3s ease, color .3s ease;
       }
       h1, h2, h3, h4 { font-family: "Sora", "Manrope", sans-serif; line-height: 1.18; margin: 0; letter-spacing: -0.015em; }
@@ -95,6 +96,13 @@
       a:hover { text-decoration: underline; }
       ul { margin: 0; padding: 0; list-style: none; }
       button { font: inherit; cursor: pointer; }
+      img { max-width: 100%; height: auto; }
+      /* Grid/flex children may shrink below their content size, so nothing
+         can push past the screen edge on narrow viewports. */
+      .hero-grid > *, .about-grid > *, .book-grid > *, .proj-grid > *, .svc-grid > *,
+      .tool-grid > *, .proc-grid > *, .cap-grid > *, .edu-grid > *, .branch > *,
+      .foot-grid > *, .flow-step > *, .node > *, .xp > *, .book-point > *, .nav > * { min-width: 0; }
+      .foot-links a, .book-note a, .book-point a { overflow-wrap: anywhere; }
       :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
       .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
       .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
@@ -503,6 +511,7 @@
       .subsection-label:first-child { margin-top: 0; }
 
       /* ============ BOOKING / CONTACT ============ */
+      #contact { scroll-margin-top: 16px; }
       .book-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: 56px; align-items: start; }
       .book-points { display: grid; gap: 16px; margin-top: 28px; }
       .book-logistics-label {
@@ -700,27 +709,47 @@
         .cap-grid { grid-template-columns: 1fr 1fr; }
       }
       @media (max-width: 820px) {
-        nav.main, .nav-actions .btn { display: none; }
+        nav.main { display: none; }
         .menu-btn { display: grid; }
         .nav-actions { margin-left: auto; }
+        .theme-btn, .menu-btn { width: 44px; height: 44px; }
         section { padding: 68px 0; }
         .hero { padding: 56px 0 64px; }
         .brand-name { font-size: .98rem; }
       }
       @media (max-width: 620px) {
-        .nav { gap: 12px; }
+        .wrap { padding: 0 20px; }
+        header.site .wrap { padding: 0 14px; }
+        .nav { gap: 8px; height: 64px; }
         .brand { gap: 9px; min-width: 0; }
         .brand-mark { width: 34px; height: 34px; border-radius: 9px; }
-        .brand-name { font-size: .93rem; }
+        .brand-name { font-size: .84rem; }
         .brand-sub { display: none !important; }
-        .nav-actions { gap: 8px; margin-left: auto; }
+        .nav-actions { gap: 6px; margin-left: auto; }
+        .nav-actions .btn { padding: 10px 12px; font-size: .8rem; }
+        .nav-actions .btn svg { display: none; }
+        .btn { min-height: 44px; }
+        .hero h1 { font-size: clamp(1.95rem, 9.6vw, 2.45rem); }
+        .hero-eyebrow { max-width: 100%; }
+        .flow-panel { padding: 22px 18px 16px; }
+        .flow-panel-head { flex-wrap: wrap; }
         .svc-grid, .tool-grid, .proc-grid, .edu-grid, .cap-grid { grid-template-columns: 1fr; }
+        .svc { padding: 26px 22px; }
+        .tool-card { padding: 24px 22px; }
+        .proc { padding: 24px 22px; }
+        .xp { padding: 20px; gap: 13px; }
+        .edu { padding: 22px; }
         .branch { grid-template-columns: 1fr; }
+        .chart { padding: 18px 14px; }
         .proj-body { padding: 28px 24px; }
         .proj-visual { padding: 22px; }
         .proj-fact { grid-template-columns: 1fr; gap: 2px; }
+        .proj-actions .btn, .dlg-actions .btn { width: 100%; }
         .foot-grid { grid-template-columns: 1fr; gap: 32px; }
+        .foot-links a { min-height: 44px; }
         .hero-ctas .btn { width: 100%; }
+        .faq summary { padding: 18px 20px; }
+        .faq .faq-body { padding: 0 20px 20px; }
         .dlg-inner { padding: 28px 24px; }
         .book-card { padding: 28px 22px; }
         .cal-frame { height: 640px; }
